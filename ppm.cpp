@@ -23,7 +23,7 @@ void PPM::run(const std::string &file_name) {
     For(j, 0, e_h) {
         if (!j) {
             std::cout << "PPM column: " << i << "!" << std::endl;
-            ppm_map -> build();
+            //ppm_map -> build();
         }
         tracer_pixel_x = i, tracer_pixel_y = j;
         if (tracer_is_edge[i][j])

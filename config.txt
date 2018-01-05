@@ -59,4 +59,4 @@ soft_shadow_samples
 4
 
 thread_max_number
-4
+20
