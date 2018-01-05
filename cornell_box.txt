@@ -1,0 +1,278 @@
+--------------------------------
+config
+/Users/wjh720/Desktop/Tmp/proejct/config.txt
+
+--------------------------------
+ambient_color
+0.05 0.05 0.05
+
+--------------------------------
+camera
+
+    8
+
+    c_aperture
+    0.05
+
+    c_eye
+    0.0 -3. 0.8
+
+    c_focal_length
+    2.4
+
+    c_field_angle
+    45.
+
+    c_h
+    100
+
+    c_look_at
+    0. 0. 0.8
+
+    c_up
+    0. 0. 1.
+
+    c_w
+    130
+
+--------------------------------
+lights
+1
+
+    -------------------------
+    light_1
+
+    type
+    Rectlight
+
+        6
+
+        l_color
+        1. 1. 1.
+
+        rect_normal
+        0. 0. -1.
+
+        rect_dx
+        0.25 0. 0.
+
+        rect_dy
+        0. 0.25 0.
+
+        rect_center
+        0. 0. 1.6
+
+        l_power
+        6.
+
+--------------------------------
+objects
+7
+
+    -------------------------
+    floor
+
+    type
+    Plane
+
+        3
+
+        plane_d
+        0
+
+        o_material
+
+            3
+
+            m_color
+            1. 1. 1.
+
+            m_diffuse
+            0.9
+
+            m_spec
+            0.0
+
+        plane_n
+        0. 0. 1.
+
+    -------------------------
+    ceiling
+
+    type
+    Plane
+
+        3
+
+        plane_d
+        1.6
+
+        o_material
+
+            3
+
+            m_color
+            1. 1. 1.
+
+            m_diffuse
+            0.9
+
+            m_spec
+            0.0
+
+        plane_n
+        0. 0. -1.
+
+    -------------------------
+    right_wall
+
+    type
+    Plane
+
+        3
+
+        plane_d
+        1.
+
+        o_material
+
+            3
+
+            m_color
+            0.5 0.5 1.
+
+            m_diffuse
+            0.9
+
+            m_spec
+            0.0
+
+        plane_n
+        -1. 0. 0.
+
+    -------------------------
+    left_wall
+
+    type
+    Plane
+
+        3
+
+        plane_d
+        1.
+
+        o_material
+
+            3
+
+            m_color
+            1. 0.5 0.5
+
+            m_diffuse
+            0.9
+
+            m_spec
+            0.0
+
+        plane_n
+        1. 0. 0.
+
+    -------------------------
+    front_wall
+
+    type
+    Plane
+
+        3
+
+        plane_d
+        1.
+
+        o_material
+
+            3
+
+            m_color
+            1. 1. 1.
+
+            m_diffuse
+            0.9
+
+            m_spec
+            0.0
+
+        plane_n
+        0. -1. 0.
+
+    -------------------------
+    sphere_1
+
+    type
+    Sphere
+
+        3
+
+        o_material
+
+            6
+
+            m_absorb_color
+            0. 0. 0.
+
+            m_color
+            1. 1. 1.
+
+            m_diffuse
+            0.
+
+            m_refl
+            0.95
+
+            m_refr
+            0.
+
+            m_spec
+            0.01
+
+        sphere_o
+        -0.43 0.27 0.33
+
+        sphere_r
+        0.33
+
+    -------------------------
+    sphere_2
+
+    type
+    Sphere
+
+        3
+
+        o_material
+
+            6
+
+            m_color
+            1. 1. 1.
+
+            m_diffuse
+            0.
+
+            m_refl
+            0.5
+
+            m_refr
+            0.5
+
+            m_refractivity
+            1.5
+
+            m_spec
+            0.
+
+        sphere_o
+        0.43 -0.37 0.33
+
+        sphere_r
+        0.33
+
