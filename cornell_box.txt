@@ -1,6 +1,6 @@
 --------------------------------
 config
-/Users/wjh720/Desktop/Tmp/proejct/config.txt
+config.txt
 
 --------------------------------
 ambient_color
