@@ -7,7 +7,7 @@
 
 void show_help()
 {
-    printf("Usage: ./render -e <engine> -s <SCENE_FILE> -o <OUTPUT_FILE>\n"
+    printf("Usage: ./render -e <engine> -s <SCENE_FILE> -o <OUTPUT_FILE> -config <CONFIG_FILE>\n"
            "Options:\n"
            "  --help                    Display this information.\n"
            "  -e <engine>               Select the rendering engine. Available engine list:\n"
@@ -18,7 +18,7 @@ void show_help()
 
 int main(int argc, char* argv[]) {
     int engine_id = 0;
-    std::string scene_file = "", output_file = "";
+    std::string scene_file = "", output_file = "", config_file = "";
     
     for (int i = 1; i < argc; i++) {
         if (!strcmp(argv[i], "-e")) {
@@ -36,15 +36,20 @@ int main(int argc, char* argv[]) {
                 output_file = argv[i + 1];
                 i++;
             } else show_help();
+        } else if (!strcmp(argv[i], "-config")) {
+            if (i + 1 < argc) {
+                config_file = argv[i + 1];
+                i++;
+            } else show_help();
         } else if (!strcmp(argv[i], "--help"))
             show_help();
     }
-    if (!scene_file.length() || !output_file.length())
+    if (!scene_file.length() || !output_file.length() || !config_file.length())
         show_help();
     
     srand(time(0));
     Engine* engine;
-    Scene* scene = Scene::load_form(scene_file);
+    Scene* scene = Scene::load_form(scene_file, config_file);
     
     std::cout << "Scene file : " << scene_file << std::endl;
     std::cout << "output file : " << output_file << std::endl;

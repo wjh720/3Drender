@@ -22,7 +22,7 @@ private:
     
 public:
     Scene(Camera* camera, const Color& ambient = Color());
-    Scene(std::ifstream &fin);
+    Scene(std::ifstream &fin, std::string &config_file);
     
     Camera* get_camera() const {return s_camera;}
     Color get_ambient_color() const {return s_ambient_color;}
@@ -41,7 +41,7 @@ public:
     Collision find_nearest_collision(const Ray &ray) const;
     
     // 从文件导入场景
-    static Scene* load_form(std::string &file);
+    static Scene* load_form(std::string &file, std::string &config_file);
 };
 
 

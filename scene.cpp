@@ -27,18 +27,16 @@ Scene::Scene(Camera* camera, const Color& ambient) {
     s_init();
 }
 
-Scene::Scene(std::ifstream &fin) {
+Scene::Scene(std::ifstream &fin, std::string &config_file) {
     std::string s = "";
+    Config::load_form(config_file);
     for (;fin >> s;) {
         if (s[0] == '-')
             continue;
         std::cerr << s << std::endl;
 //       std::cerr << CLOCKS_PER_SEC << std::endl;
 //        sleep(0.2);
-        if (s == "config") {
-            fin >> s;
-            Config::load_form(s);
-        } else if (s == "ambient_color")
+        if (s == "ambient_color")
             s_ambient_color = Color(fin);
         else if (s == "camera")
             s_camera = new Camera(fin);
@@ -75,14 +73,14 @@ Collision Scene::find_nearest_collision(const Ray &ray) const {
     return colli;
 }
 
-Scene* Scene::load_form(std::string &file) {
+Scene* Scene::load_form(std::string &file, std::string &config_file) {
     std::ifstream fin(file.c_str());
     if (!fin) {
         std::cerr << "No scene file!" << std::endl;
         return nullptr;
     }
     s_scene_file_dir = file.substr(0, file.find_last_of('/'));
-    Scene* scene = new Scene(fin);
+    Scene* scene = new Scene(fin, config_file);
     fin.close();
     return scene;
 }
