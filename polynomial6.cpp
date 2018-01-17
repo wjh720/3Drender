@@ -3,6 +3,7 @@
 #include "polynomial6.h"
 
 #include <iostream>
+#include <cstring>
 
 const long double eps1 = 1e-10;
 const long double eps2 = 1e-14;
