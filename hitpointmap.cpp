@@ -95,7 +95,6 @@ void Hit_point_map::build() {
 
 void Hit_point_map::update_hit_point() {
     for (auto &i : hit_point_map_points) {
-        //?
         if (i.hit_point_M) {
             double sum = i.hit_point_N + i.hit_point_M * Config::ppm_alpha;
             double k = sum / (i.hit_point_N + i.hit_point_M);
