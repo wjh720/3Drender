@@ -86,6 +86,7 @@ void RayTracer::run(const std::string &file_name) {
                 break;
         }
         
+        /*
         Last_refresh_time = clock();
         for (size_t t = 0; t < aa_list.size(); t++) {
             int i = aa_list[t].first, j = aa_list[t].second;
@@ -101,7 +102,28 @@ void RayTracer::run(const std::string &file_name) {
                 Last_refresh_time = clock();
                 e_camera -> print(file_name);
             }
+        }*/
+        
+        int sum = 0, num_threads = std::max(Config::thread_max_number, 1);
+        std::vector<std::thread> threads;
+        
+        Color color;
+        for (int i = 0; i < num_threads; i++) {
+            int number = aa_list.size / num_threads;
+            int l = number * i, r = i + 1 == num_threads ? aa_list.size : number * (i + 1);
+            
+            threads.push_back(std::thread([this, l, r, aa_list]() {
+                For(t, l, r) {
+                    int i = aa_list[t].first, j = aa_list[t].second;
+                    tracer_is_edge[i][j] = 1;
+                    e_camera -> set_color(i, j, tracer_AA_sampling_color(i, j));
+                }
+            }));
         }
+        for (int i = 0; i < num_threads; i++)
+            threads[i].join();
+        
+        
         e_camera -> print(file_name);
         std::cerr << (clock() - t_1) / CLOCKS_PER_SEC << std::endl;
         //sleep(1);
@@ -116,7 +138,7 @@ Color RayTracer::tracer_AA_sampling_color(int ox, int oy) {
     std::vector<std::pair<double ,double > > points;
     int samples = Config::anti_aliasing_samples;
     
-    /*
+    
     For(i, 0, samples * 2)
     For(j, 0, samples * 2) {
         // 旋转网格采样
@@ -126,37 +148,19 @@ Color RayTracer::tracer_AA_sampling_color(int ox, int oy) {
         double yy = sin(angle) * x + cos(angle) * y;
         if (std::abs(xx) < 0.5 && std::abs(yy) < 0.5)
             points.push_back(std::make_pair(ox + xx, oy + yy));
-    }*/
+    }
     
-    
+    /*
     For(i, 0, samples * samples * 4) {
         double xx = Const::Rand_double() - 0.5, yy = Const::Rand_double() - 0.5;
         if (std::abs(xx) < 0.5 && std::abs(yy) < 0.5)
             points.push_back(std::make_pair(ox + xx, oy + yy));
-    }
-    
-    std::mutex lock;
-    int sum = 0, num_threads = std::max(Config::thread_max_number, 1);
-    std::vector<std::thread> threads;
+    }*/
     
     Color color;
-    for (int i = 0; i < num_threads; i++) {
-        int number = points.size() / num_threads;
-        std::vector<std::pair<double ,double > > points;
-        int l = number * i, r = number * (i + 1);
-        
-        threads.push_back(std::thread([this, l, r, points, &color]() {
-            For(i, l, r) {
-                Color asd = tracer_DOF_sampling_color(points[i].first, points[i].second, 1. / points.size());
-                lock.lock();
-                color += asd;
-                lock.unlock();
-            }
-        }));
+    for (auto i : points) {
+        color += tracer_DOF_sampling_color(i.first, i.second, 1. / points.size());
     }
-    
-    for (int i = 0; i < num_threads; i++)
-        threads[i].join();
     
     return color;
 }
