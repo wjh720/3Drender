@@ -108,12 +108,12 @@ void RayTracer::run(const std::string &file_name) {
         std::vector<std::thread> threads;
         
         Color color;
-        for (int i = 0; i < num_threads; i++) {
+        for (int k = 0; k < num_threads; k++) {
             int number = aa_list.size() / num_threads;
-            int l = number * i, r = i + 1 == num_threads ? aa_list.size() : number * (i + 1);
             
-            threads.push_back(std::thread([this, l, r, aa_list]() {
-                For(t, l, r) {
+            threads.push_back(std::thread([this, k, num_threads, aa_list]() {
+                For(t, 0, aa_list.size())
+                if (t % num_threads == k) {
                     int i = aa_list[t].first, j = aa_list[t].second;
                     tracer_is_edge[i][j] = 1;
                     e_camera -> set_color(i, j, tracer_AA_sampling_color(i, j));
@@ -122,7 +122,6 @@ void RayTracer::run(const std::string &file_name) {
         }
         for (int i = 0; i < num_threads; i++)
             threads[i].join();
-        
         
         e_camera -> print(file_name);
         std::cerr << (clock() - t_1) / CLOCKS_PER_SEC << std::endl;
