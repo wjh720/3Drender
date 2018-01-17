@@ -1,0 +1,234 @@
+--------------------------------
+ambient_color   0.3 0.3 0.3
+
+--------------------------------
+camera
+
+8
+c_aperture  0.
+c_eye   0.5 -5. 1.2
+c_focal_length  0.
+c_field_angle   40.
+c_h 60
+c_look_at   0.3 -1.5 1.
+c_up    0. 0. 1.
+c_w 80
+
+--------------------------------
+lights
+1
+
+-------------------------
+light_1
+
+type
+Rectlight
+
+6
+l_color 1. 1. 1.
+rect_normal 0. 0. -1.
+rect_dx 0.25 0. 0.
+rect_dy 0. 0.25 0.
+rect_center 0. 0. 4.9
+l_power 100.
+
+--------------------------------
+objects
+9
+
+-------------------------
+floor
+
+type
+Plane
+
+3
+plane_d 2.
+plane_n -1. 0. 0.
+o_material
+
+4
+m_color 1. 1. 0.5
+m_diffuse   0.8
+m_spec  0.2
+m_refl 0.
+
+-------------------------
+ceiling
+
+type
+Plane
+
+3
+plane_d 2.
+plane_n 1. 0. 0.
+o_material
+
+4
+m_color 0.5 0.5 1.
+m_diffuse   0.8
+m_spec  0.2
+m_refl 0.
+
+-------------------------
+right_wall
+
+type
+Plane
+
+3
+plane_d 5.
+plane_n 0. 1. 0.
+o_material
+
+4
+m_color 1. 1. 1.
+m_diffuse   0.8
+m_spec  0.2
+m_refl 0.
+
+-------------------------
+left_wall
+
+type
+Plane
+
+3
+plane_d 5.
+plane_n 0. 0. -1.
+o_material
+
+4
+m_color 1. 1. 1.
+m_diffuse   0.8
+m_spec  0.2
+m_refl 0.
+
+-------------------------
+front_wall
+
+type
+Plane
+
+6
+plane_d 0.
+plane_n 0. 0. 1.
+plane_center    0. 0. 0.
+plane_dx    1. 0. 0.
+plane_dy    0. -1. 0.
+o_material
+
+5
+m_color 1. 1. 1.
+m_diffuse   0.8
+m_spec  0.2
+m_refl  0.
+m_texture   ../a3.bmp
+
+-------------------------
+back_wall
+
+type
+Plane
+
+3
+plane_d 3.
+plane_n 0. -1. 0.
+o_material
+
+4
+m_color 1. 1. 1.
+m_diffuse   0.8
+m_spec  0.2
+m_refl 0.0
+
+-------------------------
+rotation_body_1
+
+type
+Rotation_body
+
+3
+rb_center   0. 0. 0.
+o_material
+
+7
+m_diffuse   0.
+m_spec  0.0
+m_refl 0.2
+m_refr 0.8
+m_refractivity 1.5
+m_absorb_color  0.0 0.0 0.0
+m_color 1. 1. 1.
+rb_curves
+
+6
+-------
+0. 0.05
+0.2 0.05
+0.3 0.
+0.4 0.
+-------
+0.4 0.
+0.4 0.12
+0.05 0.12
+0.05 0.2
+-------
+0.05 0.2
+0.05 0.2
+0.05 0.9
+0.05 0.9
+-------
+0.05 0.9
+0.05 1.1
+0.75 1.1
+0.35 2.0
+-------
+0.35 2.0
+0.345555556 2.01
+0.344 2.01
+0.34 2.0
+-------
+0.34 2.0
+0.70 1.1
+0.05 1.1
+0.0 1.1
+
+-------------------------
+sphere_1
+
+type
+Sphere
+
+3
+sphere_o    1.3 0. 0.33
+sphere_r    0.33
+o_material
+
+6
+m_color 1. 1. 1.
+m_diffuse   0.
+m_refl  0.5
+m_refr  0.5
+m_refractivity  1.5
+m_spec  0.
+
+-------------------------
+sphere_2
+
+type
+Sphere
+
+5
+sphere_o    -1.3 0. 0.33
+sphere_r    0.33
+sphere_dx   1. 0. 0.
+sphere_dz   0. 0. 1.
+o_material
+
+4
+m_color 1. 1. 1.
+m_diffuse   0.7
+m_spec  0.3
+m_texture ../marble.bmp
+

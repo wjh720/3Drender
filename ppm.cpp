@@ -6,6 +6,8 @@
 #include "camera.h"
 
 #include <iostream>
+#include <ctime>
+#include <unistd.h>
 
 #define For(i, x, y) for (int i = x; i < y; i++)
 
@@ -39,9 +41,9 @@ void PPM::run(const std::string &file_name) {
     std::cout << "Start PPM!" << std::endl;
     PhotonTracer* tracer = new PhotonTracer(e_scene, ppm_map);
     
-    //?
     int sum = 0;
     For(i, 0, Config::ppm_iteration_depth) {
+        double time_1 = clock();
         std::cout << "Round: " << i << "!" << std::endl;
         tracer -> emit_photons(Config::ppm_photon_emitted_number);
         ppm_map -> update_hit_point();
@@ -57,11 +59,12 @@ void PPM::run(const std::string &file_name) {
             Color color = color_1 + color_2;
             e_camera -> set_color(x, y, color);
         }
-        e_camera -> print(file_name.c_str());
+        e_camera -> print(file_name);
+        std::cerr << "The time of one round is " << (clock() - time_1) / CLOCKS_PER_SEC  << std::endl;
+        //sleep(1);
     }
 }
 
-//?
 Color PPM::tracer_calc_local_illumination(const Collision &coll, const Material* material,
                                      const Color &factor) const {
     if (ppm_find_edge)

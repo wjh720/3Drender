@@ -96,6 +96,8 @@ void Config::load_form(std::string &file) {
             fin >> soft_shadow_samples;
         else if (s == "thread_max_number")
             fin >> thread_max_number;
+        else if (s == "ppm_initial_search_radius")
+            fin >> ppm_initial_search_radius;
         else std::cerr << "Config error!" << std::endl;
     }
     fin.close();

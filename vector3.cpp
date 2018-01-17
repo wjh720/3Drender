@@ -36,7 +36,3 @@ Vector3 Vector3::random_normal_vector() {
     }
     return a;
 }
-
-/*
- double Vector3::mix(const Vector3 &A, const Vector3 &B, const Vector3 &C);
-*/

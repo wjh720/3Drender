@@ -54,8 +54,9 @@ Scene::Scene(std::ifstream &fin, std::string &config_file) {
                 Object* object = Object::load_ifstream(fin);
                 if (object) s_objects.push_back(object);
             }
-        } else std::cerr << "Scene error!" << std::endl;
+        } else std::cerr << " Scene error!" << std::endl;
     }
+    sleep(1);
 }
 
 Collision Scene::find_nearest_collision(const Ray &ray) const {

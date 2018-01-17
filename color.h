@@ -34,7 +34,7 @@ struct Color {
     double confine(double a) {return std::fmin(1, std::fmax(0, a));}
     Color confine() {return Color(confine(r), confine(g), confine(b));}
     
-    void print() {
+    void print() const {
         printf("%lf %lf %lf\n", r, g, b);
     }
 };

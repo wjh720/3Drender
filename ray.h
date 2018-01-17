@@ -16,7 +16,7 @@ struct Ray {
     // normalize the direction
     Ray normal() const {return Ray(ray_start, ray_direction.normal());}
     
-    void print() {
+    void print() const {
         std::cerr << "Ray" << std::endl;
         ray_start.print();
         ray_direction.print();

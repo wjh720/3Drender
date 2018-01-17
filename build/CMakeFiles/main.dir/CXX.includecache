@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/bezier_curve3.cpp
+bezier_curve3.h
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/bezier_curve3.h
+vector
+-
+iostream
+-
+
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/bezier_curve3.h
+vector2.h
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/vector2.h
+vector
+-
+
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/bmp.cpp
 bmp.h
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/bmp.h
@@ -94,6 +108,22 @@ cmath
 cstdlib
 -
 
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/cylinder.cpp
+const.h
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/const.h
+cylinder.h
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/cylinder.h
+iostream
+-
+unistd.h
+-
+
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/cylinder.h
+vector3.h
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/vector3.h
+object.h
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/object.h
+
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/engine.cpp
 engine.h
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/engine.h
@@ -153,6 +183,8 @@ cstring
 -
 iostream
 -
+ctime
+-
 
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/material.cpp
 vector3.h
@@ -164,6 +196,8 @@ material.h
 config.h
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/config.h
 iostream
+-
+unistd.h
 -
 
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/material.h
@@ -181,6 +215,10 @@ plane.h
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/plane.h
 sphere.h
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/sphere.h
+cylinder.h
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/cylinder.h
+rotationbody.h
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/rotationbody.h
 iostream
 -
 
@@ -219,6 +257,8 @@ mutex
 -
 thread
 -
+unistd.h
+-
 
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/photontracer.h
 
@@ -252,6 +292,22 @@ vector3.h
 light.h
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/light.h
 
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/polynomial6.cpp
+config.h
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/config.h
+const.h
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/const.h
+polynomial6.h
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/polynomial6.h
+iostream
+-
+
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/polynomial6.h
+vector
+-
+cstdlib
+-
+
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/ppm.cpp
 config.h
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/config.h
@@ -266,6 +322,10 @@ ppm.h
 camera.h
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/camera.h
 iostream
+-
+ctime
+-
+unistd.h
 -
 
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/ppm.h
@@ -324,6 +384,32 @@ vector3.h
 light.h
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/light.h
 
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/rotationbody.cpp
+const.h
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/const.h
+cylinder.h
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/cylinder.h
+rotationbody.h
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/rotationbody.h
+polynomial6.h
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/polynomial6.h
+bezier_curve3.h
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/bezier_curve3.h
+unistd.h
+-
+iostream
+-
+
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/rotationbody.h
+vector3.h
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/vector3.h
+object.h
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/object.h
+bezier_curve3.h
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/bezier_curve3.h
+vector
+-
+
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/scene.cpp
 config.h
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/config.h
@@ -370,6 +456,16 @@ vector3.h
 object.h
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/object.h
 
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/vector2.h
+const.h
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/const.h
+cstdio
+-
+cmath
+-
+fstream
+-
+
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/vector3.cpp
 const.h
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/const.h
@@ -381,6 +477,8 @@ cmath
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/vector3.h
 const.h
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/const.h
+vector2.h
+/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/vector2.h
 cstdio
 -
 cmath

@@ -4,6 +4,7 @@
 #include "config.h"
 
 #include <iostream>
+#include <unistd.h>
 
 Material::Material() {
     m_color = Color(1, 1, 1), m_absorb_color = Color(0, 0, 0),
@@ -41,7 +42,8 @@ bool Material::compare(const Material* B) const {
 
 double Material::get_BRDF(const Vector3 &l, const Vector3 &n, const Vector3 &v) const {
     Vector3 r = l.reflect(n);
-    return m_diffuse * l.dot(n) + m_spec * std::pow(r.dot(v), Config::hightlight_exponent);
+    double asd =  m_diffuse * l.dot(n) + m_spec * std::pow(r.dot(v), Config::hightlight_exponent);
+    return asd;
 }
 
 Material* Material::load_ifstream(std::ifstream &fin) {
@@ -65,14 +67,10 @@ Material* Material::load_ifstream(std::ifstream &fin) {
             fin >> material.m_refr;
         else if (s == "m_refractivity")
             fin >> material.m_refractivity;
-        else std::cerr << "Material error!" << std::endl;
-                
-        // not used till now
-        /*
-        case "texture":
-            material.m_texture = new Bmp(fin);
-            break;
-        */
+        else if (s == "m_texture") {
+            fin >> s;
+            material.m_texture = new Bmp(s);
+        } else std::cerr << "Material error!" << std::endl;
     }
     return new Material(material);
 }

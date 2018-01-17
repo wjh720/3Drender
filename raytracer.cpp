@@ -29,6 +29,8 @@ RayTracer::RayTracer(Scene* scene) : Engine(scene) {
 void RayTracer::run(const std::string &file_name) {
     if (!e_scene) return;
     
+    double t_1 = clock();
+    
     std::cout << "Start RayTracing!" << std::endl;
     clock_t Last_refresh_time = clock();
     For(i, 0, e_w) {
@@ -38,6 +40,7 @@ void RayTracer::run(const std::string &file_name) {
             tracer_hash[i][j] = 0;
             e_camera -> set_color(i, j, tracer_DOF_sampling_color(i, j));
         }
+        //sleep(1);
         
         if (Config::output_refresh_interval > 0 &&
             clock() - Last_refresh_time > Config::output_refresh_interval * CLOCKS_PER_SEC) {
@@ -46,7 +49,9 @@ void RayTracer::run(const std::string &file_name) {
         }
     }
     e_camera -> print(file_name);
-    std::cerr << "jb" << std::endl;
+    //std::cerr << "jb" << std::endl;
+    std::cerr << (clock() - t_1) / CLOCKS_PER_SEC << std::endl;
+    //sleep(1);
     
     if (Config::anti_aliasing_samples) {
         std::cout << "Smooth!" << std::endl;
@@ -96,6 +101,8 @@ void RayTracer::run(const std::string &file_name) {
             }
         }
         e_camera -> print(file_name);
+        std::cerr << (clock() - t_1) / CLOCKS_PER_SEC << std::endl;
+        //sleep(1);
     }
 }
 
@@ -107,7 +114,7 @@ Color RayTracer::tracer_AA_sampling_color(int ox, int oy) {
     std::vector<std::pair<double ,double > > points;
     int samples = Config::anti_aliasing_samples;
     
-    /*
+    
     For(i, 0, samples * 2)
     For(j, 0, samples * 2) {
         // 旋转网格采样
@@ -118,12 +125,14 @@ Color RayTracer::tracer_AA_sampling_color(int ox, int oy) {
         if (std::abs(xx) < 0.5 && std::abs(yy) < 0.5)
             points.push_back(std::make_pair(ox + xx, oy + yy));
     }
-    */
     
+    /*
     For(i, 0, samples * samples * 4) {
         double xx = Const::Rand_double() - 0.5, yy = Const::Rand_double() - 0.5;
-        points.push_back(std::make_pair(ox + xx, oy + yy));
+        if (std::abs(xx) < 0.5 && std::abs(yy) < 0.5)
+            points.push_back(std::make_pair(ox + xx, oy + yy));
     }
+    */
     Color color;
     for (auto i : points) {
         color += tracer_DOF_sampling_color(i.first, i.second, 1. / points.size());
@@ -220,7 +229,7 @@ Color RayTracer::tracer_calc_local_illumination(const Collision &coll, const Mat
                                                 const Color &factor) const {
     Color color = material -> m_color * coll.co_object -> get_texture_color(coll);
     Color res = color * e_scene -> get_ambient_color() * material -> m_diffuse;  // 环境光
-    
+
     for (auto light = e_scene -> lights_begin(); light != e_scene -> lights_end(); light++) {
         Vector3 l = ((*light) -> get_source() - coll.co_p).normal();
         if (l.dot(coll.co_n) < Const::eps) continue;

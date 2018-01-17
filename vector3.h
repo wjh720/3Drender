@@ -2,6 +2,8 @@
 #define Vector3_h
 
 #include "const.h"
+#include "vector2.h"
+
 #include <cstdio>
 #include <cmath>
 
@@ -18,8 +20,6 @@ struct Vector3 {
     Vector3 operator +() const {return Vector3(x, y, z);}
     Vector3 operator /(double A) const {return Vector3(x / A, y / A, z / A);}
     Vector3 operator *(double A) const {return Vector3(x * A, y * A, z * A);}
-    Vector3 operator -=(const Vector3 &A) const {return Vector3(x - A.x, y - A.y, z - A.z);}
-    Vector3 operator +=(const Vector3 &A) const {return Vector3(x + A.x, y + A.y, z + A.z);}
     
     double operator [](int i) const {return !i ? x : i == 1 ? y : z;}
     
@@ -33,11 +33,17 @@ struct Vector3 {
         return *(this) / (len < Const::eps ? 1 : len);
     }
     
-    // 混合积
-    //double mix(const Vector3 &A, const Vector3 &B, const Vector3 &C);
+    Vector3 operator +(const Vector3 &A) const {return Vector3(x + A.x, y + A.y, z + A.z);}
+    Vector3 operator -(const Vector3 &A) const {return Vector3(x - A.x, y - A.y, z - A.z);}
+    Vector3 operator *(const Vector3 &A) const {
+        return Vector3(y * A.z - z * A.y, z * A.x - x * A.z, x * A.y - y * A.x);
+    }
+    
+    // 混合积 ?
+    double mix(const Vector3 &A, const Vector3 &B, const Vector3 &C) {return A.dot(B * C);}
     
     // 转为二维向量，忽略第 3 维
-    //Vector2 to_Vector2() {return Vector2(x, y);}
+    Vector2 to_Vector2() {return Vector2(x, y);}
     
     // 任意一个与自己垂直的向量
     Vector3 get_an_orthogonal_vector() const;
@@ -58,12 +64,6 @@ struct Vector3 {
         printf("%lf %lf %lf\n", x, y, z);
     }
 };
-
-inline Vector3 operator + (const Vector3 &A, const Vector3 &B) {return Vector3(A.x + B.x, A.y + B.y, A.z + B.z);}
-inline Vector3 operator - (const Vector3 &A, const Vector3 &B) {return Vector3(A.x - B.x, A.y - B.y, A.z - B.z);}
-inline Vector3 operator * (const Vector3 &A, const Vector3 &B) {
-    return Vector3(A.y * B.z - A.z * B.y, A.z * B.x - A.x * B.z, A.x * B.y - A.y * B.x);
-}
 
 
 #endif // Vector3_h

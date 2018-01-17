@@ -6,6 +6,8 @@
 
 class Plane;
 class Sphere;
+class Cylinder;
+class Rotation_body;
 
 class Object {
 protected:

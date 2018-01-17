@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <iostream>
+#include <ctime>
 
 void show_help()
 {
@@ -19,6 +20,7 @@ void show_help()
 int main(int argc, char* argv[]) {
     int engine_id = 0;
     std::string scene_file = "", output_file = "", config_file = "";
+    double t_1 = clock();
     
     for (int i = 1; i < argc; i++) {
         if (!strcmp(argv[i], "-e")) {
@@ -62,7 +64,9 @@ int main(int argc, char* argv[]) {
             engine = new PPM(scene);
             break;
     }
+    std::cerr << (clock() - t_1) / CLOCKS_PER_SEC << std::endl;
     engine -> run(output_file);
+    std::cerr << (clock() - t_1) / CLOCKS_PER_SEC << std::endl;
     
     return 0;
 }

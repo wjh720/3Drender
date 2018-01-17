@@ -123,6 +123,33 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+bezier_curve3.o: bezier_curve3.cpp.o
+
+.PHONY : bezier_curve3.o
+
+# target to build an object file
+bezier_curve3.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/bezier_curve3.cpp.o
+.PHONY : bezier_curve3.cpp.o
+
+bezier_curve3.i: bezier_curve3.cpp.i
+
+.PHONY : bezier_curve3.i
+
+# target to preprocess a source file
+bezier_curve3.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/bezier_curve3.cpp.i
+.PHONY : bezier_curve3.cpp.i
+
+bezier_curve3.s: bezier_curve3.cpp.s
+
+.PHONY : bezier_curve3.s
+
+# target to generate assembly for a file
+bezier_curve3.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/bezier_curve3.cpp.s
+.PHONY : bezier_curve3.cpp.s
+
 bmp.o: bmp.cpp.o
 
 .PHONY : bmp.o
@@ -230,6 +257,33 @@ config.s: config.cpp.s
 config.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/config.cpp.s
 .PHONY : config.cpp.s
+
+cylinder.o: cylinder.cpp.o
+
+.PHONY : cylinder.o
+
+# target to build an object file
+cylinder.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/cylinder.cpp.o
+.PHONY : cylinder.cpp.o
+
+cylinder.i: cylinder.cpp.i
+
+.PHONY : cylinder.i
+
+# target to preprocess a source file
+cylinder.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/cylinder.cpp.i
+.PHONY : cylinder.cpp.i
+
+cylinder.s: cylinder.cpp.s
+
+.PHONY : cylinder.s
+
+# target to generate assembly for a file
+cylinder.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/cylinder.cpp.s
+.PHONY : cylinder.cpp.s
 
 engine.o: engine.cpp.o
 
@@ -474,6 +528,33 @@ pointlight.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/pointlight.cpp.s
 .PHONY : pointlight.cpp.s
 
+polynomial6.o: polynomial6.cpp.o
+
+.PHONY : polynomial6.o
+
+# target to build an object file
+polynomial6.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/polynomial6.cpp.o
+.PHONY : polynomial6.cpp.o
+
+polynomial6.i: polynomial6.cpp.i
+
+.PHONY : polynomial6.i
+
+# target to preprocess a source file
+polynomial6.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/polynomial6.cpp.i
+.PHONY : polynomial6.cpp.i
+
+polynomial6.s: polynomial6.cpp.s
+
+.PHONY : polynomial6.s
+
+# target to generate assembly for a file
+polynomial6.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/polynomial6.cpp.s
+.PHONY : polynomial6.cpp.s
+
 ppm.o: ppm.cpp.o
 
 .PHONY : ppm.o
@@ -554,6 +635,33 @@ rectlight.s: rectlight.cpp.s
 rectlight.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/rectlight.cpp.s
 .PHONY : rectlight.cpp.s
+
+rotationbody.o: rotationbody.cpp.o
+
+.PHONY : rotationbody.o
+
+# target to build an object file
+rotationbody.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/rotationbody.cpp.o
+.PHONY : rotationbody.cpp.o
+
+rotationbody.i: rotationbody.cpp.i
+
+.PHONY : rotationbody.i
+
+# target to preprocess a source file
+rotationbody.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/rotationbody.cpp.i
+.PHONY : rotationbody.cpp.i
+
+rotationbody.s: rotationbody.cpp.s
+
+.PHONY : rotationbody.s
+
+# target to generate assembly for a file
+rotationbody.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/rotationbody.cpp.s
+.PHONY : rotationbody.cpp.s
 
 scene.o: scene.cpp.o
 
@@ -645,6 +753,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... main"
+	@echo "... bezier_curve3.o"
+	@echo "... bezier_curve3.i"
+	@echo "... bezier_curve3.s"
 	@echo "... bmp.o"
 	@echo "... bmp.i"
 	@echo "... bmp.s"
@@ -657,6 +768,9 @@ help:
 	@echo "... config.o"
 	@echo "... config.i"
 	@echo "... config.s"
+	@echo "... cylinder.o"
+	@echo "... cylinder.i"
+	@echo "... cylinder.s"
 	@echo "... engine.o"
 	@echo "... engine.i"
 	@echo "... engine.s"
@@ -684,6 +798,9 @@ help:
 	@echo "... pointlight.o"
 	@echo "... pointlight.i"
 	@echo "... pointlight.s"
+	@echo "... polynomial6.o"
+	@echo "... polynomial6.i"
+	@echo "... polynomial6.s"
 	@echo "... ppm.o"
 	@echo "... ppm.i"
 	@echo "... ppm.s"
@@ -693,6 +810,9 @@ help:
 	@echo "... rectlight.o"
 	@echo "... rectlight.i"
 	@echo "... rectlight.s"
+	@echo "... rotationbody.o"
+	@echo "... rotationbody.i"
+	@echo "... rotationbody.s"
 	@echo "... scene.o"
 	@echo "... scene.i"
 	@echo "... scene.s"

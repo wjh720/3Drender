@@ -1,3 +1,6 @@
+ppm_initial_search_radius
+1.
+
 anti_aliasing_edge_threshold
 0.01
 
@@ -47,7 +50,7 @@ ppm_iteration_depth
 1000
 
 ppm_photon_emitted_number
-10000
+100000
 
 raytracing_max_depth
 20

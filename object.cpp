@@ -1,6 +1,8 @@
 #include "object.h"
 #include "plane.h"
 #include "sphere.h"
+#include "cylinder.h"
+#include "rotationbody.h"
 
 #include <iostream>
 
@@ -20,6 +22,10 @@ Object* Object::load_ifstream(std::ifstream &fin) {
             return new Plane(fin);
         else if (s == "Sphere")
             return new Sphere(fin);
+        else if (s == "Cylinder")
+            return new Cylinder(fin);
+        else if (s == "Rotation_body")
+            return new Rotation_body(fin);
         else return nullptr;
     } else {
         std::cerr << "Light with no type!" << std::endl;

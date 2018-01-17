@@ -33,7 +33,7 @@ Color Sphere::get_texture_color(const Collision &coll) const {
         double a = acos(std::min(std::max(coll.co_n.dot(sphere_dx) / sin(b), -1.), 1.));
         double v = b / Const::pi, u = a / 2 / Const::pi;
         if (coll.co_n.dot(sphere_dz * sphere_dx) < 0) u = 1 - u;
-        else o_material -> get_texture_color(u, v);
+        return o_material -> get_texture_color(u, v);
     }
     return Color(1, 1, 1);
 }
@@ -43,6 +43,8 @@ Sphere::Sphere(std::ifstream &fin) {
     std::string s = "";
     fin >> n;
     Material* material;
+    Vector3 dx, dz;
+    bool flag = 0;
     for (int i = 0; i < n; i++) {
         fin >> s;
         if (s == "o_material")
@@ -51,8 +53,14 @@ Sphere::Sphere(std::ifstream &fin) {
             sphere_o = Vector3(fin);
         else if (s == "sphere_r")
             fin >> sphere_r;
+        else if (s == "sphere_dx")
+            dx = Vector3(fin), flag = 1;
+        else if (s == "sphere_dz")
+            dz = Vector3(fin), flag = 1;
         else std::cerr << "Sphere error!" << std::endl;
     }
     (*this) = Sphere(sphere_o, sphere_r, material);
+    if (flag)
+        set_texture_axis(dz, dx);
 }
 

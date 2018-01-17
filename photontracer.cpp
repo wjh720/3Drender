@@ -10,6 +10,7 @@
 #include <iostream>
 #include <mutex>
 #include <thread>
+#include <unistd.h>
 
 // ?
 void PhotonTracer::emit_photons(int number_photons) {

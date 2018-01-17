@@ -57,9 +57,33 @@ include CMakeFiles/main.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/main.dir/flags.make
 
+CMakeFiles/main.dir/bezier_curve3.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/bezier_curve3.cpp.o: ../bezier_curve3.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/bezier_curve3.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/bezier_curve3.cpp.o -c /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/bezier_curve3.cpp
+
+CMakeFiles/main.dir/bezier_curve3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/bezier_curve3.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/bezier_curve3.cpp > CMakeFiles/main.dir/bezier_curve3.cpp.i
+
+CMakeFiles/main.dir/bezier_curve3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/bezier_curve3.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/bezier_curve3.cpp -o CMakeFiles/main.dir/bezier_curve3.cpp.s
+
+CMakeFiles/main.dir/bezier_curve3.cpp.o.requires:
+
+.PHONY : CMakeFiles/main.dir/bezier_curve3.cpp.o.requires
+
+CMakeFiles/main.dir/bezier_curve3.cpp.o.provides: CMakeFiles/main.dir/bezier_curve3.cpp.o.requires
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/bezier_curve3.cpp.o.provides.build
+.PHONY : CMakeFiles/main.dir/bezier_curve3.cpp.o.provides
+
+CMakeFiles/main.dir/bezier_curve3.cpp.o.provides.build: CMakeFiles/main.dir/bezier_curve3.cpp.o
+
+
 CMakeFiles/main.dir/bmp.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/bmp.cpp.o: ../bmp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/bmp.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/bmp.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/bmp.cpp.o -c /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/bmp.cpp
 
 CMakeFiles/main.dir/bmp.cpp.i: cmake_force
@@ -83,7 +107,7 @@ CMakeFiles/main.dir/bmp.cpp.o.provides.build: CMakeFiles/main.dir/bmp.cpp.o
 
 CMakeFiles/main.dir/camera.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/camera.cpp.o: ../camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/camera.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/camera.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/camera.cpp.o -c /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/camera.cpp
 
 CMakeFiles/main.dir/camera.cpp.i: cmake_force
@@ -107,7 +131,7 @@ CMakeFiles/main.dir/camera.cpp.o.provides.build: CMakeFiles/main.dir/camera.cpp.
 
 CMakeFiles/main.dir/collision.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/collision.cpp.o: ../collision.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/collision.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/collision.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/collision.cpp.o -c /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/collision.cpp
 
 CMakeFiles/main.dir/collision.cpp.i: cmake_force
@@ -131,7 +155,7 @@ CMakeFiles/main.dir/collision.cpp.o.provides.build: CMakeFiles/main.dir/collisio
 
 CMakeFiles/main.dir/config.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/config.cpp.o: ../config.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/config.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/config.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/config.cpp.o -c /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/config.cpp
 
 CMakeFiles/main.dir/config.cpp.i: cmake_force
@@ -153,9 +177,33 @@ CMakeFiles/main.dir/config.cpp.o.provides: CMakeFiles/main.dir/config.cpp.o.requ
 CMakeFiles/main.dir/config.cpp.o.provides.build: CMakeFiles/main.dir/config.cpp.o
 
 
+CMakeFiles/main.dir/cylinder.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/cylinder.cpp.o: ../cylinder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.dir/cylinder.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/cylinder.cpp.o -c /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/cylinder.cpp
+
+CMakeFiles/main.dir/cylinder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/cylinder.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/cylinder.cpp > CMakeFiles/main.dir/cylinder.cpp.i
+
+CMakeFiles/main.dir/cylinder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/cylinder.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/cylinder.cpp -o CMakeFiles/main.dir/cylinder.cpp.s
+
+CMakeFiles/main.dir/cylinder.cpp.o.requires:
+
+.PHONY : CMakeFiles/main.dir/cylinder.cpp.o.requires
+
+CMakeFiles/main.dir/cylinder.cpp.o.provides: CMakeFiles/main.dir/cylinder.cpp.o.requires
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/cylinder.cpp.o.provides.build
+.PHONY : CMakeFiles/main.dir/cylinder.cpp.o.provides
+
+CMakeFiles/main.dir/cylinder.cpp.o.provides.build: CMakeFiles/main.dir/cylinder.cpp.o
+
+
 CMakeFiles/main.dir/engine.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/engine.cpp.o: ../engine.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/engine.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.dir/engine.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/engine.cpp.o -c /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/engine.cpp
 
 CMakeFiles/main.dir/engine.cpp.i: cmake_force
@@ -179,7 +227,7 @@ CMakeFiles/main.dir/engine.cpp.o.provides.build: CMakeFiles/main.dir/engine.cpp.
 
 CMakeFiles/main.dir/hitpointmap.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/hitpointmap.cpp.o: ../hitpointmap.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.dir/hitpointmap.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/main.dir/hitpointmap.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/hitpointmap.cpp.o -c /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/hitpointmap.cpp
 
 CMakeFiles/main.dir/hitpointmap.cpp.i: cmake_force
@@ -203,7 +251,7 @@ CMakeFiles/main.dir/hitpointmap.cpp.o.provides.build: CMakeFiles/main.dir/hitpoi
 
 CMakeFiles/main.dir/light.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/light.cpp.o: ../light.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.dir/light.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/main.dir/light.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/light.cpp.o -c /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/light.cpp
 
 CMakeFiles/main.dir/light.cpp.i: cmake_force
@@ -227,7 +275,7 @@ CMakeFiles/main.dir/light.cpp.o.provides.build: CMakeFiles/main.dir/light.cpp.o
 
 CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/main.cpp.o -c /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/main.cpp
 
 CMakeFiles/main.dir/main.cpp.i: cmake_force
@@ -251,7 +299,7 @@ CMakeFiles/main.dir/main.cpp.o.provides.build: CMakeFiles/main.dir/main.cpp.o
 
 CMakeFiles/main.dir/material.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/material.cpp.o: ../material.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/main.dir/material.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/main.dir/material.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/material.cpp.o -c /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/material.cpp
 
 CMakeFiles/main.dir/material.cpp.i: cmake_force
@@ -275,7 +323,7 @@ CMakeFiles/main.dir/material.cpp.o.provides.build: CMakeFiles/main.dir/material.
 
 CMakeFiles/main.dir/object.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/object.cpp.o: ../object.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/main.dir/object.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/main.dir/object.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/object.cpp.o -c /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/object.cpp
 
 CMakeFiles/main.dir/object.cpp.i: cmake_force
@@ -299,7 +347,7 @@ CMakeFiles/main.dir/object.cpp.o.provides.build: CMakeFiles/main.dir/object.cpp.
 
 CMakeFiles/main.dir/photontracer.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/photontracer.cpp.o: ../photontracer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/main.dir/photontracer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/main.dir/photontracer.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/photontracer.cpp.o -c /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/photontracer.cpp
 
 CMakeFiles/main.dir/photontracer.cpp.i: cmake_force
@@ -323,7 +371,7 @@ CMakeFiles/main.dir/photontracer.cpp.o.provides.build: CMakeFiles/main.dir/photo
 
 CMakeFiles/main.dir/plane.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/plane.cpp.o: ../plane.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/main.dir/plane.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/main.dir/plane.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/plane.cpp.o -c /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/plane.cpp
 
 CMakeFiles/main.dir/plane.cpp.i: cmake_force
@@ -347,7 +395,7 @@ CMakeFiles/main.dir/plane.cpp.o.provides.build: CMakeFiles/main.dir/plane.cpp.o
 
 CMakeFiles/main.dir/pointlight.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/pointlight.cpp.o: ../pointlight.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/main.dir/pointlight.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/main.dir/pointlight.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/pointlight.cpp.o -c /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/pointlight.cpp
 
 CMakeFiles/main.dir/pointlight.cpp.i: cmake_force
@@ -369,9 +417,33 @@ CMakeFiles/main.dir/pointlight.cpp.o.provides: CMakeFiles/main.dir/pointlight.cp
 CMakeFiles/main.dir/pointlight.cpp.o.provides.build: CMakeFiles/main.dir/pointlight.cpp.o
 
 
+CMakeFiles/main.dir/polynomial6.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/polynomial6.cpp.o: ../polynomial6.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/main.dir/polynomial6.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/polynomial6.cpp.o -c /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/polynomial6.cpp
+
+CMakeFiles/main.dir/polynomial6.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/polynomial6.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/polynomial6.cpp > CMakeFiles/main.dir/polynomial6.cpp.i
+
+CMakeFiles/main.dir/polynomial6.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/polynomial6.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/polynomial6.cpp -o CMakeFiles/main.dir/polynomial6.cpp.s
+
+CMakeFiles/main.dir/polynomial6.cpp.o.requires:
+
+.PHONY : CMakeFiles/main.dir/polynomial6.cpp.o.requires
+
+CMakeFiles/main.dir/polynomial6.cpp.o.provides: CMakeFiles/main.dir/polynomial6.cpp.o.requires
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/polynomial6.cpp.o.provides.build
+.PHONY : CMakeFiles/main.dir/polynomial6.cpp.o.provides
+
+CMakeFiles/main.dir/polynomial6.cpp.o.provides.build: CMakeFiles/main.dir/polynomial6.cpp.o
+
+
 CMakeFiles/main.dir/ppm.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/ppm.cpp.o: ../ppm.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/main.dir/ppm.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/main.dir/ppm.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/ppm.cpp.o -c /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/ppm.cpp
 
 CMakeFiles/main.dir/ppm.cpp.i: cmake_force
@@ -395,7 +467,7 @@ CMakeFiles/main.dir/ppm.cpp.o.provides.build: CMakeFiles/main.dir/ppm.cpp.o
 
 CMakeFiles/main.dir/raytracer.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/raytracer.cpp.o: ../raytracer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/main.dir/raytracer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/main.dir/raytracer.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/raytracer.cpp.o -c /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/raytracer.cpp
 
 CMakeFiles/main.dir/raytracer.cpp.i: cmake_force
@@ -419,7 +491,7 @@ CMakeFiles/main.dir/raytracer.cpp.o.provides.build: CMakeFiles/main.dir/raytrace
 
 CMakeFiles/main.dir/rectlight.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/rectlight.cpp.o: ../rectlight.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/main.dir/rectlight.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/main.dir/rectlight.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/rectlight.cpp.o -c /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/rectlight.cpp
 
 CMakeFiles/main.dir/rectlight.cpp.i: cmake_force
@@ -441,9 +513,33 @@ CMakeFiles/main.dir/rectlight.cpp.o.provides: CMakeFiles/main.dir/rectlight.cpp.
 CMakeFiles/main.dir/rectlight.cpp.o.provides.build: CMakeFiles/main.dir/rectlight.cpp.o
 
 
+CMakeFiles/main.dir/rotationbody.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/rotationbody.cpp.o: ../rotationbody.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/main.dir/rotationbody.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/rotationbody.cpp.o -c /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/rotationbody.cpp
+
+CMakeFiles/main.dir/rotationbody.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/rotationbody.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/rotationbody.cpp > CMakeFiles/main.dir/rotationbody.cpp.i
+
+CMakeFiles/main.dir/rotationbody.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/rotationbody.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/rotationbody.cpp -o CMakeFiles/main.dir/rotationbody.cpp.s
+
+CMakeFiles/main.dir/rotationbody.cpp.o.requires:
+
+.PHONY : CMakeFiles/main.dir/rotationbody.cpp.o.requires
+
+CMakeFiles/main.dir/rotationbody.cpp.o.provides: CMakeFiles/main.dir/rotationbody.cpp.o.requires
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/rotationbody.cpp.o.provides.build
+.PHONY : CMakeFiles/main.dir/rotationbody.cpp.o.provides
+
+CMakeFiles/main.dir/rotationbody.cpp.o.provides.build: CMakeFiles/main.dir/rotationbody.cpp.o
+
+
 CMakeFiles/main.dir/scene.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/scene.cpp.o: ../scene.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/main.dir/scene.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/main.dir/scene.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/scene.cpp.o -c /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/scene.cpp
 
 CMakeFiles/main.dir/scene.cpp.i: cmake_force
@@ -467,7 +563,7 @@ CMakeFiles/main.dir/scene.cpp.o.provides.build: CMakeFiles/main.dir/scene.cpp.o
 
 CMakeFiles/main.dir/sphere.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/sphere.cpp.o: ../sphere.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/main.dir/sphere.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/main.dir/sphere.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/sphere.cpp.o -c /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/sphere.cpp
 
 CMakeFiles/main.dir/sphere.cpp.i: cmake_force
@@ -491,7 +587,7 @@ CMakeFiles/main.dir/sphere.cpp.o.provides.build: CMakeFiles/main.dir/sphere.cpp.
 
 CMakeFiles/main.dir/vector3.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/vector3.cpp.o: ../vector3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/main.dir/vector3.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/main.dir/vector3.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/vector3.cpp.o -c /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/vector3.cpp
 
 CMakeFiles/main.dir/vector3.cpp.i: cmake_force
@@ -515,10 +611,12 @@ CMakeFiles/main.dir/vector3.cpp.o.provides.build: CMakeFiles/main.dir/vector3.cp
 
 # Object files for target main
 main_OBJECTS = \
+"CMakeFiles/main.dir/bezier_curve3.cpp.o" \
 "CMakeFiles/main.dir/bmp.cpp.o" \
 "CMakeFiles/main.dir/camera.cpp.o" \
 "CMakeFiles/main.dir/collision.cpp.o" \
 "CMakeFiles/main.dir/config.cpp.o" \
+"CMakeFiles/main.dir/cylinder.cpp.o" \
 "CMakeFiles/main.dir/engine.cpp.o" \
 "CMakeFiles/main.dir/hitpointmap.cpp.o" \
 "CMakeFiles/main.dir/light.cpp.o" \
@@ -528,9 +626,11 @@ main_OBJECTS = \
 "CMakeFiles/main.dir/photontracer.cpp.o" \
 "CMakeFiles/main.dir/plane.cpp.o" \
 "CMakeFiles/main.dir/pointlight.cpp.o" \
+"CMakeFiles/main.dir/polynomial6.cpp.o" \
 "CMakeFiles/main.dir/ppm.cpp.o" \
 "CMakeFiles/main.dir/raytracer.cpp.o" \
 "CMakeFiles/main.dir/rectlight.cpp.o" \
+"CMakeFiles/main.dir/rotationbody.cpp.o" \
 "CMakeFiles/main.dir/scene.cpp.o" \
 "CMakeFiles/main.dir/sphere.cpp.o" \
 "CMakeFiles/main.dir/vector3.cpp.o"
@@ -538,10 +638,12 @@ main_OBJECTS = \
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
+main: CMakeFiles/main.dir/bezier_curve3.cpp.o
 main: CMakeFiles/main.dir/bmp.cpp.o
 main: CMakeFiles/main.dir/camera.cpp.o
 main: CMakeFiles/main.dir/collision.cpp.o
 main: CMakeFiles/main.dir/config.cpp.o
+main: CMakeFiles/main.dir/cylinder.cpp.o
 main: CMakeFiles/main.dir/engine.cpp.o
 main: CMakeFiles/main.dir/hitpointmap.cpp.o
 main: CMakeFiles/main.dir/light.cpp.o
@@ -551,15 +653,17 @@ main: CMakeFiles/main.dir/object.cpp.o
 main: CMakeFiles/main.dir/photontracer.cpp.o
 main: CMakeFiles/main.dir/plane.cpp.o
 main: CMakeFiles/main.dir/pointlight.cpp.o
+main: CMakeFiles/main.dir/polynomial6.cpp.o
 main: CMakeFiles/main.dir/ppm.cpp.o
 main: CMakeFiles/main.dir/raytracer.cpp.o
 main: CMakeFiles/main.dir/rectlight.cpp.o
+main: CMakeFiles/main.dir/rotationbody.cpp.o
 main: CMakeFiles/main.dir/scene.cpp.o
 main: CMakeFiles/main.dir/sphere.cpp.o
 main: CMakeFiles/main.dir/vector3.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -567,10 +671,12 @@ CMakeFiles/main.dir/build: main
 
 .PHONY : CMakeFiles/main.dir/build
 
+CMakeFiles/main.dir/requires: CMakeFiles/main.dir/bezier_curve3.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/bmp.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/camera.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/collision.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/config.cpp.o.requires
+CMakeFiles/main.dir/requires: CMakeFiles/main.dir/cylinder.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/engine.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/hitpointmap.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/light.cpp.o.requires
@@ -580,9 +686,11 @@ CMakeFiles/main.dir/requires: CMakeFiles/main.dir/object.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/photontracer.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/plane.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/pointlight.cpp.o.requires
+CMakeFiles/main.dir/requires: CMakeFiles/main.dir/polynomial6.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/ppm.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/raytracer.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/rectlight.cpp.o.requires
+CMakeFiles/main.dir/requires: CMakeFiles/main.dir/rotationbody.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/scene.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/sphere.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/vector3.cpp.o.requires
