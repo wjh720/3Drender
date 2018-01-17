@@ -169,12 +169,10 @@ Color RayTracer::tracer_AA_sampling_color(int ox, int oy) {
     
     Color color;
     for (int k = 0; k < num_threads; k++) {
-        int number = aa_list.size() / num_threads;
-        
         threads.push_back(std::thread([this, k, num_threads, points, &lock, &color]() {
             For(t, 0, points.size())
             if (t % num_threads == k) {
-                std::pair<double ,double > i = point[t];
+                std::pair<double ,double > i = points[t];
                 Color asd = tracer_DOF_sampling_color(i.first, i.second, 1. / points.size());
                 lock.lock();
                 color += asd;
