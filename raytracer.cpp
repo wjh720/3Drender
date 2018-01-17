@@ -104,13 +104,13 @@ void RayTracer::run(const std::string &file_name) {
             }
         }*/
         
-        int sum = 0, num_threads = std::max(Config::thread_max_number, 1);
+        int num_threads = std::max(Config::thread_max_number, 1);
         std::vector<std::thread> threads;
         
         Color color;
         for (int i = 0; i < num_threads; i++) {
-            int number = aa_list.size / num_threads;
-            int l = number * i, r = i + 1 == num_threads ? aa_list.size : number * (i + 1);
+            int number = aa_list.size() / num_threads;
+            int l = number * i, r = i + 1 == num_threads ? aa_list.size() : number * (i + 1);
             
             threads.push_back(std::thread([this, l, r, aa_list]() {
                 For(t, l, r) {
