@@ -59,7 +59,7 @@ raytracing_min_weight
 0.05
 
 soft_shadow_samples
-16
+4
 
 thread_max_number
 20
