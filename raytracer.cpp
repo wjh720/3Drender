@@ -115,13 +115,13 @@ void RayTracer::run(const std::string &file_name) {
             threads.push_back(std::thread([this, k, num_threads, aa_list, &lock]() {
                 For(t, 0, aa_list.size())
                 if (t % num_threads == k) {
+                    int i = aa_list[t].first, j = aa_list[t].second;
                     if (!t || i != aa_list[t - 1].first) {
                         lock.lock();
                         std::cout << "Smooth column: " << i << "!" << std::endl;
                         lock.unlock();
                     }
                     
-                    int i = aa_list[t].first, j = aa_list[t].second;
                     tracer_is_edge[i][j] = 1;
                     e_camera -> set_color(i, j, tracer_AA_sampling_color(i, j));
                 }
