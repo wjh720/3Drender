@@ -86,7 +86,7 @@ void RayTracer::run(const std::string &file_name) {
                 break;
         }
         
-        
+        /*
         Last_refresh_time = clock();
         for (size_t t = 0; t < aa_list.size(); t++) {
             int i = aa_list[t].first, j = aa_list[t].second;
@@ -102,16 +102,14 @@ void RayTracer::run(const std::string &file_name) {
                 Last_refresh_time = clock();
                 e_camera -> print(file_name);
             }
-        }
-        /*
+        }*/
+        
         std::mutex lock;
         int num_threads = std::max(Config::thread_max_number, 1);
         std::vector<std::thread> threads;
         
         Color color;
         for (int k = 0; k < num_threads; k++) {
-            int number = aa_list.size() / num_threads;
-            
             threads.push_back(std::thread([this, k, num_threads, aa_list, &lock]() {
                 For(t, 0, aa_list.size())
                 if (t % num_threads == k) {
@@ -129,7 +127,7 @@ void RayTracer::run(const std::string &file_name) {
         }
         for (int i = 0; i < num_threads; i++)
             threads[i].join();
-        */
+        
         e_camera -> print(file_name);
         std::cerr << (clock() - t_1) / CLOCKS_PER_SEC << std::endl;
         //sleep(1);
@@ -163,30 +161,10 @@ Color RayTracer::tracer_AA_sampling_color(int ox, int oy) {
             points.push_back(std::make_pair(ox + xx, oy + yy));
     }*/
     
-    std::mutex lock;
-    int num_threads = std::max(Config::thread_max_number, 1);
-    std::vector<std::thread> threads;
-    
     Color color;
-    for (int k = 0; k < num_threads; k++) {
-        threads.push_back(std::thread([this, k, num_threads, points, &lock, &color]() {
-            For(t, 0, points.size())
-            if (t % num_threads == k) {
-                std::pair<double ,double > i = points[t];
-                Color asd = tracer_DOF_sampling_color(i.first, i.second, 1. / points.size());
-                lock.lock();
-                color += asd;
-                lock.unlock();
-            }
-        }));
-    }
-    for (int i = 0; i < num_threads; i++)
-        threads[i].join();
-    
-    /*
     for (auto i : points) {
         color += tracer_DOF_sampling_color(i.first, i.second, 1. / points.size());
-    }*/
+    }
     
     return color;
 }

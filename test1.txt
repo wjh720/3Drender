@@ -9,10 +9,10 @@ camera
     c_eye   0.5 -3.5 2.5
     c_focal_length  0.
     c_field_angle   40.
-    c_h 600
+    c_h 60
     c_look_at   0.3 -2.5 2.
     c_up    0. 0. 1.
-    c_w 800
+    c_w 80
 
 --------------------------------
 lights

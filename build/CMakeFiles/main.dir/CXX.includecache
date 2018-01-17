@@ -301,6 +301,8 @@ polynomial6.h
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/polynomial6.h
 iostream
 -
+cstring
+-
 
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/polynomial6.h
 vector
@@ -326,6 +328,10 @@ iostream
 ctime
 -
 unistd.h
+-
+thread
+-
+mutex
 -
 
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/ppm.h
@@ -356,6 +362,10 @@ iostream
 cmath
 -
 unistd.h
+-
+thread
+-
+mutex
 -
 
 /Users/wjh720/Desktop/now/SRT/Wavenet/Code/3Drender_wjh/raytracer.h

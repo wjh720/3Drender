@@ -8,6 +8,8 @@
 #include <iostream>
 #include <ctime>
 #include <unistd.h>
+#include <thread>
+#include <mutex>
 
 #define For(i, x, y) for (int i = x; i < y; i++)
 
@@ -21,6 +23,11 @@ void PPM::run(const std::string &file_name) {
     ppm_find_edge = false;
     
     std::cout << "PPM!" << std::endl;
+    
+    std::mutex lock;
+    int num_threads = std::max(Config::thread_max_number, 1);
+    std::vector<std::thread> threads;
+    
     For(i, 0, e_w)
     For(j, 0, e_h) {
         if (!j) {
@@ -28,9 +35,9 @@ void PPM::run(const std::string &file_name) {
             //ppm_map -> build();
         }
         tracer_pixel_x = i, tracer_pixel_y = j;
-        if (tracer_is_edge[i][j])
+        if (tracer_is_edge[i][j]) {
             e_camera -> set_color(i, j, tracer_AA_sampling_color(i, j));
-        else
+        } else
             e_camera -> set_color(i, j, tracer_DOF_sampling_color(i, j));
     }
     
