@@ -8,7 +8,7 @@ anti_aliasing_edge_detection_mode
 0
 
 anti_aliasing_samples
-16
+4
 
 depth_of_field_samples
 0
