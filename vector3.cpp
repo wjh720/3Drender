@@ -1,7 +1,18 @@
 #include "const.h"
 #include "vector3.h"
 
+#include <algorithm>
+#include <iostream>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <vector>
+#include <bitset>
 #include <cmath>
+#include <ctime>
+#include <queue>
+#include <set>
+#include <map>
 
 Vector3 Vector3::get_an_orthogonal_vector() const {
     Vector3 a = (*this) * Vector3(1, 0, 0);
@@ -21,7 +32,6 @@ Vector3 Vector3::refract(const Vector3 &n, const double &refractivity) const {
 }
 
 Vector3 Vector3::diffuse() const {
-    //?
     double theta = acos(sqrt(Const::Rand_double())), phi = 2 * Const::pi * Const::Rand_double();
     Vector3 dir(cos(phi) * sin(theta), sin(phi) * sin(theta), cos(theta));
     Vector3 dx = get_an_orthogonal_vector(), dy = (*this) * dx;

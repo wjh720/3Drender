@@ -2,8 +2,18 @@
 #include "config.h"
 #include "const.h"
 
-#include <cstring>
+#include <algorithm>
 #include <iostream>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <vector>
+#include <bitset>
+#include <cmath>
+#include <ctime>
+#include <queue>
+#include <set>
+#include <map>
 
 Bmp::Bmp(int w, int h, const Color& background)
     : m_w(w), m_h(h),

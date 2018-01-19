@@ -2,7 +2,19 @@
 #define Ray_h
 
 #include "vector3.h"
+
+#include <algorithm>
 #include <iostream>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <vector>
+#include <bitset>
+#include <cmath>
+#include <ctime>
+#include <queue>
+#include <set>
+#include <map>
 
 struct Ray {
     Vector3 ray_start, ray_direction;

@@ -5,7 +5,18 @@
 #include "bezier_curve3.h"
 
 #include <unistd.h>
+#include <algorithm>
 #include <iostream>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <vector>
+#include <bitset>
+#include <cmath>
+#include <ctime>
+#include <queue>
+#include <set>
+#include <map>
 
 Poly::Poly() {
     for (int i = 0; i < 7; i++)
@@ -59,6 +70,25 @@ Poly Poly::operator -() {
     return (*this);
 }
 
+Rotation_body::Rotation_body(std::ifstream &fin) {
+    int n;
+    std::string s = "";
+    fin >> n;
+    Material* material;
+    for (int i = 0; i < n; i++) {
+        fin >> s;
+        if (s == "o_material")
+            material = Material::load_ifstream(fin);
+        else if (s == "rb_center")
+            rb_center = Vector3(fin);
+        else if (s == "rb_curves")
+            rb_curves = Bezier_curve3::load_ifstream(fin);
+        else std::cerr << "Rotation_body error!" << std::endl;
+    }
+    (*this) = Rotation_body(rb_center, rb_curves, material);
+}
+
+
 Rotation_body::Rotation_body(const Vector3 &center, const Curves &curves, const Material* m) : Object(m) {
     rb_center = center, rb_curves = curves,
     rb_r = 0, rb_h = 0, rb_angle = 0;
@@ -69,7 +99,6 @@ Rotation_body::Rotation_body(const Vector3 &center, const Curves &curves, const 
     rb_init();
 }
 
-//?
 void Rotation_body::rb_init() {
     for (auto c : rb_curves) {
         double r = std::max(std::abs(c.b3_Mi.x), std::abs(c.b3_Ma.x));
@@ -91,7 +120,6 @@ void Rotation_body::rb_init() {
     }
 }
 
-//?
 Collision Rotation_body::collide_ray(const Ray &ray) const {
     Ray normal_ray = ray.normal();
     Vector3 dir = normal_ray.ray_direction;
@@ -107,7 +135,7 @@ Collision Rotation_body::collide_ray(const Ray &ray) const {
         if (!coll.is_intersecting() || (!coll.co_is_internal && coll.co_distance > res.x - Const::eps))
             continue;
         
-        
+        /*
         Vector3 r_c = ray.ray_start;
         Vector3 center_dir = r_c - rb_center;
         Vector2 dir2 = dir.to_Vector2(), center_dir2 = center_dir.to_Vector2();
@@ -129,8 +157,9 @@ Collision Rotation_body::collide_ray(const Ray &ray) const {
         a[5] = 2 * (A * q2.y * q3.y + D * q2.x * q3.x);
         a[6] = A * q3.y * q3.y + D * q3.x * q3.x;
         Polynomial6 poly(a);
+         */
         
-        /*
+        
         long double a[7];
         Vector3 r_c = ray.ray_start;
         Vector3 center_dir = rb_center - r_c;
@@ -150,11 +179,10 @@ Collision Rotation_body::collide_ray(const Ray &ray) const {
         E = C, E += D, E -= A;
         
         Polynomial6 poly(E.a);
-         */
         
         std::vector<double> roots = poly.return_all_roots(0, 1);
         
-        center_dir = -center_dir;
+        //center_dir = -center_dir;
         for (auto u : roots) {
             double t = -1;
             Vector2 p = rb_curves[i].get_p(u);
@@ -195,7 +223,6 @@ Collision Rotation_body::collide_ray(const Ray &ray) const {
         return Collision();
 }
 
-//?
 Color Rotation_body::get_texture_color(const Collision &coll) const {
     if (o_material -> has_texture()) {
         int id = coll.co_u;
@@ -206,20 +233,3 @@ Color Rotation_body::get_texture_color(const Collision &coll) const {
     return Color(1, 1, 1);
 }
 
-Rotation_body::Rotation_body(std::ifstream &fin) {
-    int n;
-    std::string s = "";
-    fin >> n;
-    Material* material;
-    for (int i = 0; i < n; i++) {
-        fin >> s;
-        if (s == "o_material")
-            material = Material::load_ifstream(fin);
-        else if (s == "rb_center")
-            rb_center = Vector3(fin);
-        else if (s == "rb_curves")
-            rb_curves = Bezier_curve3::load_ifstream(fin);
-        else std::cerr << "Rotation_body error!" << std::endl;
-    }
-    (*this) = Rotation_body(rb_center, rb_curves, material);
-}

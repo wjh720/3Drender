@@ -4,6 +4,16 @@
 
 #include <algorithm>
 #include <iostream>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <vector>
+#include <bitset>
+#include <cmath>
+#include <ctime>
+#include <queue>
+#include <set>
+#include <map>
 
 Hit_point::Hit_point(const Vector3 &position, const Vector3 &n, const Vector3 &direction, const Material* material,
                          int x, int y, const Color & color, double r2) {

@@ -3,8 +3,49 @@
 #include "material.h"
 #include "config.h"
 
+#include <algorithm>
 #include <iostream>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <vector>
+#include <bitset>
+#include <cmath>
+#include <ctime>
+#include <queue>
+#include <set>
+#include <map>
+
 #include <unistd.h>
+
+Material* Material::load_ifstream(std::ifstream &fin) {
+    int n;
+    std::string s = "";
+    Material material;
+    fin >> n;
+    for (int i = 0; i < n; i++) {
+        fin >> s;
+        if (s == "m_color")
+            material.m_color = Color(fin);
+        else if (s == "m_diffuse")
+            fin >> material.m_diffuse;
+        else if (s == "m_spec")
+            fin >> material.m_spec;
+        else if (s == "m_absorb_color")
+            material.m_absorb_color = Color(fin);
+        else if (s == "m_refl")
+            fin >> material.m_refl;
+        else if (s == "m_refr")
+            fin >> material.m_refr;
+        else if (s == "m_refractivity")
+            fin >> material.m_refractivity;
+        else if (s == "m_texture") {
+            fin >> s;
+            material.m_texture = new Bmp(s);
+        } else std::cerr << "Material error!" << std::endl;
+    }
+    return new Material(material);
+}
 
 Material::Material() {
     m_color = Color(1, 1, 1), m_absorb_color = Color(0, 0, 0),
@@ -46,31 +87,4 @@ double Material::get_BRDF(const Vector3 &l, const Vector3 &n, const Vector3 &v) 
     return asd;
 }
 
-Material* Material::load_ifstream(std::ifstream &fin) {
-    int n;
-    std::string s = "";
-    Material material;
-    fin >> n;
-    for (int i = 0; i < n; i++) {
-        fin >> s;
-        if (s == "m_color")
-            material.m_color = Color(fin);
-        else if (s == "m_diffuse")
-            fin >> material.m_diffuse;
-        else if (s == "m_spec")
-            fin >> material.m_spec;
-        else if (s == "m_absorb_color")
-            material.m_absorb_color = Color(fin);
-        else if (s == "m_refl")
-            fin >> material.m_refl;
-        else if (s == "m_refr")
-            fin >> material.m_refr;
-        else if (s == "m_refractivity")
-            fin >> material.m_refractivity;
-        else if (s == "m_texture") {
-            fin >> s;
-            material.m_texture = new Bmp(s);
-        } else std::cerr << "Material error!" << std::endl;
-    }
-    return new Material(material);
-}
+

@@ -4,9 +4,18 @@
 #include "camera.h"
 
 #include <algorithm>
-#include <ctime>
 #include <iostream>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <vector>
+#include <bitset>
 #include <cmath>
+#include <ctime>
+#include <queue>
+#include <set>
+#include <map>
+
 #include <unistd.h>
 #include <thread>
 #include <mutex>
@@ -60,7 +69,7 @@ void RayTracer::run(const std::string &file_name) {
         
         std::vector<std::pair<int ,int > > aa_list;
         switch (Config::anti_aliasing_edge_detection_mode) {
-            case 0:     // 根据不同物体
+            case 0:
                 For(i, 0, e_w)
                 For(j, 0, e_h) {
                     tracer_is_edge[i][j] = 0;
@@ -76,10 +85,10 @@ void RayTracer::run(const std::string &file_name) {
                 sort(aa_list.begin(), aa_list.end());
                 aa_list.erase(unique(aa_list.begin(), aa_list.end()), aa_list.end());
                 break;
-            case 1:     // 根据相邻像素色差
+            case 1:
                 aa_list = e_camera -> detect_edge();
                 break;
-            default:    // 全图采样
+            default:
                 For(i, 0, e_w)
                 For(j, 0, e_h)
                     aa_list.push_back(std::make_pair(i, j));
@@ -145,9 +154,8 @@ Color RayTracer::tracer_AA_sampling_color(int ox, int oy) {
     
     For(i, 0, samples * 2)
     For(j, 0, samples * 2) {
-        // 旋转网格采样
         double x = (i + 0.5) / samples - 1, y = (j + 0.5) / samples - 1;
-        double angle = atan(0.5); //?
+        double angle = atan(0.5);
         double xx = cos(angle) * x - sin(angle) * y;
         double yy = sin(angle) * x + cos(angle) * y;
         if (std::abs(xx) < 0.5 && std::abs(yy) < 0.5)
@@ -198,15 +206,12 @@ Color RayTracer::tracer_ray_tracing(const Ray &ray, const Color &factor, double 
         const Object* obj = coll.co_object;
         const Material* material = obj -> get_material();
         
-        // 透明材质的颜色过滤
-        // 越远吸收的越多 law
         if (coll.co_is_internal)
             absorb = (material -> m_absorb_color * -coll.co_distance).exp();
 
         if (material -> m_diffuse > Const::eps || material -> m_spec > Const::eps)
             res += tracer_calc_local_illumination(coll, material, factor * absorb);
 
-        // 反射, 透射
         if (material -> m_refl > Const::eps || material -> m_refr > Const::eps) {
             double refractivity = material -> m_refractivity;
             if (coll.co_is_internal) refractivity = 1. / refractivity;
@@ -214,23 +219,23 @@ Color RayTracer::tracer_ray_tracing(const Ray &ray, const Color &factor, double 
             Vector3 refl = coll.co_ray.ray_direction.reflect(coll.co_n);
             Vector3 refr = coll.co_ray.ray_direction.refract(coll.co_n, refractivity);
             
-            if (material -> m_refr < Const::eps)            // 全镜面反射
+            if (material -> m_refr < Const::eps)
                 res += tracer_ray_tracing(Ray(coll.co_p, refl),
                                           factor * absorb * (material -> m_color * material -> m_refl),
                                           weight * material -> m_refl, depth + 1);
-            else if (refr.length2() < Const::eps) {         // 全反射
+            else if (refr.length2() < Const::eps) {
                 double k = material -> m_refl + material -> m_refr;
                 res += tracer_ray_tracing(Ray(coll.co_p, refl),
                                      factor * absorb * (material -> m_color * k),
                                      weight * k, depth + 1);
-            } else if (material -> m_refl < Const::eps)     // 全透射
+            } else if (material -> m_refl < Const::eps)
                 res += tracer_ray_tracing(Ray(coll.co_p, refr),
                                           factor * absorb * material -> m_refr,
                                           weight * material -> m_refr, depth + 1);
-            else {                                        //反射 + 透射
+            else {
                 double kl = material -> m_refl, kr = material -> m_refr;
                 
-                // Fresnel equations ?
+                // Fresnel equations
                 if (Config::enable_fresnel) {
                     double cosI = -coll.co_ray.ray_direction.dot(coll.co_n);
                     double cosT = sqrt(1 - (1 - cosI * cosI) / refractivity / refractivity);
@@ -257,7 +262,7 @@ Color RayTracer::tracer_ray_tracing(const Ray &ray, const Color &factor, double 
 Color RayTracer::tracer_calc_local_illumination(const Collision &coll, const Material* material,
                                                 const Color &factor) const {
     Color color = material -> m_color * coll.co_object -> get_texture_color(coll);
-    Color res = color * e_scene -> get_ambient_color() * material -> m_diffuse;  // 环境光
+    Color res = color * e_scene -> get_ambient_color() * material -> m_diffuse;
 
     for (auto light = e_scene -> lights_begin(); light != e_scene -> lights_end(); light++) {
         Vector3 l = ((*light) -> get_source() - coll.co_p).normal();

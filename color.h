@@ -3,8 +3,19 @@
 
 #include "const.h"
 
+#include <algorithm>
+#include <iostream>
+#include <cstring>
+#include <cstdlib>
 #include <cstdio>
+#include <vector>
+#include <bitset>
 #include <cmath>
+#include <ctime>
+#include <queue>
+#include <set>
+#include <map>
+
 #include <fstream>
 
 struct Color {
@@ -30,7 +41,7 @@ struct Color {
     Color exp() {return Color(std::exp(r), std::exp(g), std::exp(b));}
     Color inverse() {return Color(1 - r, 1 - g, 1 - b);}
     
-    // 限制颜色取值为 [0, 1]
+    // \in [0, 1]
     double confine(double a) {return std::fmin(1, std::fmax(0, a));}
     Color confine() {return Color(confine(r), confine(g), confine(b));}
     

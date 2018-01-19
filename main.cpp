@@ -1,10 +1,18 @@
 #include "raytracer.h"
 #include "ppm.h"
 
-#include <cstdlib>
-#include <cstring>
+#include <algorithm>
 #include <iostream>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <vector>
+#include <bitset>
+#include <cmath>
 #include <ctime>
+#include <queue>
+#include <set>
+#include <map>
 
 void show_help()
 {

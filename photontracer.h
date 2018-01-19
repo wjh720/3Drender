@@ -13,10 +13,7 @@ private:
     void pt_photon_tracing(Photon &photon, int depth);
     
 public:
-    // 用于 PPM
     PhotonTracer(Scene* scene, Hit_point_map* map) {pt_hit_point_map = map, pt_scene = scene;}
-    
-    // 发射光子
     void emit_photons(int number_photons);
 };
 

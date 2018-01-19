@@ -4,11 +4,18 @@
 #include "cylinder.h"
 #include "rotationbody.h"
 
+#include <algorithm>
 #include <iostream>
-
-Object::Object(const Material* m) {
-    o_material = m == nullptr ? new Material() : m, o_label = Const::Rand_uint64();
-}
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <vector>
+#include <bitset>
+#include <cmath>
+#include <ctime>
+#include <queue>
+#include <set>
+#include <map>
 
 Object* Object::load_ifstream(std::ifstream &fin) {
     std::string s = "", string_type = "";
@@ -31,4 +38,8 @@ Object* Object::load_ifstream(std::ifstream &fin) {
         std::cerr << "Light with no type!" << std::endl;
         return nullptr;
     }
+}
+
+Object::Object(const Material* m) {
+    o_material = m == nullptr ? new Material() : m, o_label = Const::Rand_uint64();
 }

@@ -8,14 +8,14 @@ class Sphere : public Object {
 private:
     Vector3 sphere_o;
     double sphere_r;
-    Vector3 sphere_dz, sphere_dx; // 北极向量和 0度经线方向
+    Vector3 sphere_dz, sphere_dx;
     
 public:
     Sphere(const Vector3 &o, const double &r, const Material* m = nullptr);
     Sphere(std::ifstream &fin);
     
     virtual std::string get_type() const override {return "Sphere!";}
-    // 与视线相交
+
     virtual Collision collide_ray(const Ray &ray) const override;
     virtual Color get_texture_color(const Collision &coll) const override;
     

@@ -5,8 +5,19 @@
 #include "ppm.h"
 #include "camera.h"
 
+#include <algorithm>
 #include <iostream>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <vector>
+#include <bitset>
+#include <cmath>
 #include <ctime>
+#include <queue>
+#include <set>
+#include <map>
+
 #include <unistd.h>
 #include <thread>
 #include <mutex>
@@ -23,10 +34,6 @@ void PPM::run(const std::string &file_name) {
     ppm_find_edge = false;
     
     std::cout << "PPM!" << std::endl;
-    
-    std::mutex lock;
-    int num_threads = std::max(Config::thread_max_number, 1);
-    std::vector<std::thread> threads;
     
     For(i, 0, e_w)
     For(j, 0, e_h) {

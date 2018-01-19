@@ -2,7 +2,18 @@
 #include "collision.h"
 #include "object.h"
 
+#include <algorithm>
 #include <iostream>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <vector>
+#include <bitset>
+#include <cmath>
+#include <ctime>
+#include <queue>
+#include <set>
+#include <map>
 
 Collision::Collision() {
     co_distance = 1e9;

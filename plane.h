@@ -8,7 +8,7 @@ class Plane : public Object {
 private:
     Vector3 plane_n;
     double plane_d; // plane_n * t + plane_d = 0
-    Vector3 plane_center, plane_dx, plane_dy; // 纹理原点和坐标轴向量
+    Vector3 plane_center, plane_dx, plane_dy;
     
 public:
     Plane(const Vector3 &n, double d, const Material* m = nullptr);

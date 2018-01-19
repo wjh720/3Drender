@@ -4,19 +4,30 @@
 #include "light.h"
 #include "object.h"
 
+#include <algorithm>
+#include <iostream>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
 #include <vector>
+#include <bitset>
+#include <cmath>
+#include <ctime>
+#include <queue>
+#include <set>
+#include <map>
 
 class Camera;
 
 class Scene {
 private:
-    Camera* s_camera;       // 相机
-    Color s_ambient_color;  // 环境光
+    Camera* s_camera;
+    Color s_ambient_color;
     
     std::vector<Light*> s_lights;
     std::vector<Object*> s_objects;
     
-    static std::string s_scene_file_dir;   // 场景文件路径
+    static std::string s_scene_file_dir;
     
     void s_init();
     
@@ -37,10 +48,8 @@ public:
     std::vector<Object*>::const_iterator objects_begin() const {return s_objects.begin();}
     std::vector<Object*>::const_iterator objects_end() const {return s_objects.end();}
     
-    // 寻找视线最先碰到的物体或光源
     Collision find_nearest_collision(const Ray &ray) const;
     
-    // 从文件导入场景
     static Scene* load_form(std::string &file, std::string &config_file);
 };
 

@@ -2,8 +2,18 @@
 #include "const.h"
 #include "polynomial6.h"
 
+#include <algorithm>
 #include <iostream>
 #include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <vector>
+#include <bitset>
+#include <cmath>
+#include <ctime>
+#include <queue>
+#include <set>
+#include <map>
 
 const long double eps1 = 1e-10;
 const long double eps2 = 1e-14;
@@ -13,6 +23,30 @@ Polynomial6::Polynomial6(const long double a[7]) {
     for (int i = 0; i < 7; i++)
         p6_a[i] = a[i];
     p6_init();
+}
+
+long double Polynomial6::F(long double x) {
+    long double s = 0;
+    for (int i = 6; i >= 0; i--)
+        s = s * x + p6_a[i];
+    return s;
+}
+
+long double Polynomial6::dF(long double x) {
+    long double s = 0;
+    for (int i = 5; i >= 0; i--)
+        s = s * x + p6_a[i + 1] * (i + 1);
+    return s;
+}
+
+std::vector<double> Polynomial6::return_all_roots(double l, double r) {
+    p6_roots.clear();
+    find_all_roots(l, r);
+    if (std::abs(F(l)) < eps2)
+        p6_roots.push_back(l);
+    if (std::abs(F(r)) < eps2)
+        p6_roots.push_back(r);
+    return p6_roots;
 }
 
 void Polynomial6::p6_init() {
@@ -78,20 +112,6 @@ void Polynomial6::find_all_roots(long double l, long double r) {
     find_all_roots(mid, r);
 }
 
-long double Polynomial6::F(long double x) {
-    long double s = 0;
-    for (int i = 6; i >= 0; i--)
-        s = s * x + p6_a[i];
-    return s;
-}
-
-long double Polynomial6::dF(long double x) {
-    long double s = 0;
-    for (int i = 5; i >= 0; i--)
-        s = s * x + p6_a[i + 1] * (i + 1);
-    return s;
-}
-
 //theorem
 int Polynomial6::count_root(long double l, long double r) {
     int s = 0;
@@ -120,12 +140,4 @@ int Polynomial6::count_root(long double l, long double r) {
     return s;
 }
 
-std::vector<double> Polynomial6::return_all_roots(double l, double r) {
-    p6_roots.clear();
-    find_all_roots(l, r);
-    if (std::abs(F(l)) < eps2)
-        p6_roots.push_back(l);
-    if (std::abs(F(r)) < eps2)
-        p6_roots.push_back(r);
-    return p6_roots;
-}
+

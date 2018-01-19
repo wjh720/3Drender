@@ -4,7 +4,44 @@
 #include "object.h"
 #include "scene.h"
 
+#include <algorithm>
 #include <iostream>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <vector>
+#include <bitset>
+#include <cmath>
+#include <ctime>
+#include <queue>
+#include <set>
+#include <map>
+
+Rectlight::Rectlight(std::ifstream &fin) {
+    int n;
+    std::string s = "";
+    fin >> n;
+    Color color;
+    double power = 1;
+    for (int i = 0; i < n; i++) {
+        fin >> s;
+        if (s == "l_color")
+            color = Color(fin);
+        else if (s == "l_power")
+            fin >> power;
+        else if (s == "rect_normal")
+            rect_normal = Vector3(fin);
+        else if (s == "rect_center")
+            rect_center = Vector3(fin);
+        else if (s == "rect_dx")
+            rect_dx = Vector3(fin);
+        else if (s == "rect_dy")
+            rect_dy = Vector3(fin);
+        else std::cerr << "Rectlgiht error!" << std::endl;
+    }
+    (*this) = Rectlight(color, rect_center, rect_normal, rect_dx, rect_dy, power);
+}
+
 
 Rectlight::Rectlight(const Color &color, const Vector3 &center, const Vector3 &n, const Vector3 &dx,
           const Vector3 & dy, double power) : Light(color, power) {
@@ -50,27 +87,4 @@ Photon Rectlight::emit_photon(double power) const {
                   rect_normal.diffuse(), l_color * power);
 }
 
-Rectlight::Rectlight(std::ifstream &fin) {
-    int n;
-    std::string s = "";
-    fin >> n;
-    Color color;
-    double power = 1;
-    for (int i = 0; i < n; i++) {
-        fin >> s;
-        if (s == "l_color")
-            color = Color(fin);
-        else if (s == "l_power")
-            fin >> power;
-        else if (s == "rect_normal")
-            rect_normal = Vector3(fin);
-        else if (s == "rect_center")
-            rect_center = Vector3(fin);
-        else if (s == "rect_dx")
-            rect_dx = Vector3(fin);
-        else if (s == "rect_dy")
-            rect_dy = Vector3(fin);
-        else std::cerr << "Rectlgiht error!" << std::endl;
-    }
-    (*this) = Rectlight(color, rect_center, rect_normal, rect_dx, rect_dy, power);
-}
+

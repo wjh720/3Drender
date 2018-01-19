@@ -1,7 +1,17 @@
 #include "bezier_curve3.h"
 
-#include <vector>
+#include <algorithm>
 #include <iostream>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <vector>
+#include <bitset>
+#include <cmath>
+#include <ctime>
+#include <queue>
+#include <set>
+#include <map>
 
 Bezier_curve3::Bezier_curve3(const Vector2 &p0, const Vector2 &p1, const Vector2 &p2, const Vector2 &p3) {
     b3_P0 = p0, b3_P1 = p1, b3_P2 = p2, b3_P3 = p3,
@@ -21,7 +31,6 @@ Vector2 Bezier_curve3::get_dp(double t) const {
     return b3_P0 * A + b3_P1 * B + b3_P2 * C + b3_P3 * D;
 }
 
-//?
 void Bezier_curve3::get_para(Vector2 &p0, Vector2 &p1, Vector2 &p2, Vector2 &p3) const {
     p0 = b3_P0,
     p1 = (b3_P1 - b3_P0) * 3,

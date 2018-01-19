@@ -4,22 +4,32 @@
 #include "photon.h"
 #include "material.h"
 
+#include <algorithm>
+#include <iostream>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
 #include <vector>
+#include <bitset>
+#include <cmath>
+#include <ctime>
+#include <queue>
+#include <set>
+#include <map>
 
 struct Hit_point {
-    Vector3 hit_point_position, hit_point_n, hit_point_direction;   // 交点位置，法向，视线方向
-    const Material* hit_point_material;                                       // 材质
-    int hit_point_x, hit_point_y;                                   // 像素点位置
-    Color hit_point_color;                                          // 材质原始颜色
-    double hit_point_r2;                                            // 采样半径的平方
-    int hit_point_N, hit_point_M;                                   // 累计光子数，本轮发射累计光子数 ?
-    Color hit_point_flux;                                           // 光通量 ?
+    Color hit_point_color;
+    double hit_point_r2;
+    int hit_point_N, hit_point_M;
+    Color hit_point_flux;
+    Vector3 hit_point_position, hit_point_n, hit_point_direction;
+    const Material* hit_point_material;
+    int hit_point_x, hit_point_y;
     
     Hit_point() {hit_point_N = 0, hit_point_M = 0, hit_point_flux = Color();}
     Hit_point(const Vector3 &position, const Vector3 &n, const Vector3 &direction, const Material* material,
               int x, int y, const Color & color, double r2);
     
-    //?
     void update(const Photon &photon) {
         hit_point_M++;
         if (photon.p_direction.dot(hit_point_n) < -Const::eps)
@@ -55,17 +65,17 @@ private:
     Hit_point_node* hit_point_map_array;
     std::vector<Hit_point> hit_point_map_points;
 
-    // 建 KD-tree
     void build_kd_tree(int l, int r, int k);
-    
-    // 更新 r2 后需重新建树来更新 bounding box
     void rebuild_tree(int l, int r);
-    
-    // 找所有距离不超过 sqrt(r2) 的 hit point
     void find_nearest_hit_points(int l, int r, int k, const Photon& photon);
     
 public:
     Hit_point_map();
+    
+    void add_hit_point(const Hit_point &point) {hit_point_map_points.push_back(point);}
+    void update_by_photon(const Photon &photon);
+    void build();
+    void update_hit_point();
     
     std::vector<Hit_point>::const_iterator hit_point_map_points_begin() const {
         return hit_point_map_points.begin();
@@ -73,18 +83,6 @@ public:
     std::vector<Hit_point>::const_iterator hit_point_map_points_end() const {
         return hit_point_map_points.end();
     }
-    
-    // 加入 hit point
-    void add_hit_point(const Hit_point &point) {hit_point_map_points.push_back(point);}
-    
-    // 根据光子更新 hit point
-    void update_by_photon(const Photon &photon);
-    
-    // 建 KD-tree
-    void build();
-    
-    // 光子发射完后更新 hit point
-    void update_hit_point();
 };
 
 

@@ -1,8 +1,18 @@
 #ifndef Polynomial6_h
 #define Polynomial6_h
 
-#include <vector>
+#include <algorithm>
+#include <iostream>
+#include <cstring>
 #include <cstdlib>
+#include <cstdio>
+#include <vector>
+#include <bitset>
+#include <cmath>
+#include <ctime>
+#include <queue>
+#include <set>
+#include <map>
 
 struct Polynomial6 {
 private:

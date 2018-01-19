@@ -19,17 +19,16 @@ protected:
     Object(std::ifstream &fin);
     
 public:
+    
+    static Object* load_ifstream(std::ifstream &fin);
+    
     uint64 get_label() const {return o_label;}
     const Material* get_material() const {return o_material;}
     
     virtual std::string get_type() const = 0;
-    
-    // 与视线相交
     virtual Collision collide_ray(const Ray &ray) const = 0;
     virtual Color get_texture_color(const Collision &colli) const = 0;
     
-    // 从文件导入物体
-    static Object* load_ifstream(std::ifstream &fin);
 };
 
 

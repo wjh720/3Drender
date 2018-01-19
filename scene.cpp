@@ -9,23 +9,17 @@
 
 #include <algorithm>
 #include <iostream>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <vector>
+#include <bitset>
+#include <cmath>
+#include <ctime>
+#include <queue>
+#include <set>
+#include <map>
 #include <unistd.h>
-
-std::string Scene::s_scene_file_dir = "";
-
-// 反射光比例小的物体优先，其次折射光
-inline bool cc1(const Object* A, const Object* B) {
-    return A -> get_material() -> compare(B -> get_material());
-}
-
-void Scene::s_init() {
-    sort(s_objects.begin(), s_objects.end(), cc1);
-}
-
-Scene::Scene(Camera* camera, const Color& ambient) {
-    s_camera = camera, s_ambient_color = ambient;
-    s_init();
-}
 
 Scene::Scene(std::ifstream &fin, std::string &config_file) {
     std::string s = "";
@@ -34,8 +28,8 @@ Scene::Scene(std::ifstream &fin, std::string &config_file) {
         if (s[0] == '-')
             continue;
         std::cerr << s << std::endl;
-//       std::cerr << CLOCKS_PER_SEC << std::endl;
-//        sleep(0.2);
+        //       std::cerr << CLOCKS_PER_SEC << std::endl;
+        //        sleep(0.2);
         if (s == "ambient_color")
             s_ambient_color = Color(fin);
         else if (s == "camera")
@@ -57,6 +51,21 @@ Scene::Scene(std::ifstream &fin, std::string &config_file) {
         } else std::cerr << " Scene error!" << std::endl;
     }
     sleep(1);
+}
+
+std::string Scene::s_scene_file_dir = "";
+
+inline bool cc1(const Object* A, const Object* B) {
+    return A -> get_material() -> compare(B -> get_material());
+}
+
+void Scene::s_init() {
+    sort(s_objects.begin(), s_objects.end(), cc1);
+}
+
+Scene::Scene(Camera* camera, const Color& ambient) {
+    s_camera = camera, s_ambient_color = ambient;
+    s_init();
 }
 
 Collision Scene::find_nearest_collision(const Ray &ray) const {

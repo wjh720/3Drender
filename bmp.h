@@ -3,6 +3,18 @@
 
 #include "color.h"
 
+#include <algorithm>
+#include <iostream>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <vector>
+#include <bitset>
+#include <cmath>
+#include <ctime>
+#include <queue>
+#include <set>
+#include <map>
 #include <string>
 
 class Bmp
@@ -15,13 +27,11 @@ public:
     int getW() const { return m_w; }
     int getH() const { return m_h; }
     
-    // 直接获取像素点颜色
     Color getColor(int x, int y) const
     {
         return Color(m_data[x][y].r, m_data[x][y].g, m_data[x][y].b) / 255;
     }
     
-    // 根据像素位置计算颜色
     Color getColor(double u, double v) const;
     
     void setColor(int x, int y, const Color& color)

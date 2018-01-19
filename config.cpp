@@ -1,50 +1,21 @@
 #include "config.h"
 
 #include <fstream>
+
+#include <algorithm>
 #include <iostream>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <vector>
+#include <bitset>
+#include <cmath>
+#include <ctime>
+#include <queue>
+#include <set>
+#include <map>
+
 #include <unistd.h>
-
-double Config::anti_aliasing_edge_threshold = 0.01;
-
-int Config::anti_aliasing_edge_detection_mode = 0;
-
-int Config::anti_aliasing_samples = 4;
-
-int Config::depth_of_field_samples = 64;
-
-bool Config::enable_fresnel = true;
-
-bool Config::enable_texture_filtering = true;
-
-int Config::hightlight_exponent = 50;
-
-bool Config::photon_map_only = true;
-
-int Config::photon_emitted_number = 1000000;
-
-int Config::photon_sampling_number = 1000;
-
-int Config::photon_tracing_max_depth = 10;
-
-double Config::ppm_alpha = 0.7;
-
-double Config::ppm_initial_search_radius = 0.1;
-
-int Config::ppm_iteration_depth = 20;
-
-int Config::ppm_photon_emitted_number = 100000;
-
-int Config::newton_iteration_depth = 20;
-
-double Config::output_refresh_interval = 1;
-
-int Config::raytracing_max_depth = 20;
-
-double Config::raytracing_min_weight = 0.05;
-
-int Config::soft_shadow_samples = 4;
-
-int Config::thread_max_number = 4;
 
 void Config::load_form(std::string &file) {
     std::ifstream fin(file.c_str());
@@ -102,3 +73,47 @@ void Config::load_form(std::string &file) {
     }
     fin.close();
 }
+
+double Config::anti_aliasing_edge_threshold = 0.01;
+
+int Config::anti_aliasing_edge_detection_mode = 0;
+
+int Config::anti_aliasing_samples = 4;
+
+int Config::depth_of_field_samples = 64;
+
+bool Config::enable_fresnel = true;
+
+bool Config::enable_texture_filtering = true;
+
+int Config::hightlight_exponent = 50;
+
+bool Config::photon_map_only = true;
+
+int Config::photon_emitted_number = 1000000;
+
+int Config::photon_sampling_number = 1000;
+
+int Config::photon_tracing_max_depth = 10;
+
+double Config::ppm_alpha = 0.7;
+
+double Config::ppm_initial_search_radius = 0.1;
+
+int Config::ppm_iteration_depth = 20;
+
+int Config::ppm_photon_emitted_number = 100000;
+
+int Config::newton_iteration_depth = 20;
+
+double Config::output_refresh_interval = 1;
+
+int Config::raytracing_max_depth = 20;
+
+double Config::raytracing_min_weight = 0.05;
+
+int Config::soft_shadow_samples = 4;
+
+int Config::thread_max_number = 4;
+
+

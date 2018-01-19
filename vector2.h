@@ -2,8 +2,19 @@
 #define Vector2_h
 
 #include "const.h"
+
+#include <algorithm>
+#include <iostream>
+#include <cstring>
+#include <cstdlib>
 #include <cstdio>
+#include <vector>
+#include <bitset>
 #include <cmath>
+#include <ctime>
+#include <queue>
+#include <set>
+#include <map>
 
 #include <fstream>
 
@@ -32,7 +43,6 @@ struct Vector2 {
     Vector2 min(const Vector2 &A) const {return Vector2(std::min(x, A.x), std::min(y, A.y));}
     Vector2 max(const Vector2 &A) const {return Vector2(std::max(x, A.x), std::max(y, A.y));}
     
-    //极角
     double polar_angle() const {return atan2(y, x);}
     
     void print() const {

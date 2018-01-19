@@ -2,11 +2,18 @@
 #include "rectlight.h"
 #include "pointlight.h"
 
+#include <algorithm>
 #include <iostream>
-
-Light::Light(const Color &color, double power) {
-    l_color = color, l_power = power, l_label = Const::Rand_uint64();
-}
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <vector>
+#include <bitset>
+#include <cmath>
+#include <ctime>
+#include <queue>
+#include <set>
+#include <map>
 
 Light* Light::load_ifstream(std::ifstream &fin) {
     std::string s = "", string_type = "";
@@ -26,3 +33,9 @@ Light* Light::load_ifstream(std::ifstream &fin) {
         return nullptr;
     }
 }
+
+Light::Light(const Color &color, double power) {
+    l_color = color, l_power = power, l_label = Const::Rand_uint64();
+}
+
+

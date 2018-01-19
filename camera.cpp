@@ -6,24 +6,18 @@
 
 #include <algorithm>
 #include <iostream>
+#include <cstring>
+#include <cstdlib>
+#include <cstdio>
+#include <vector>
+#include <bitset>
+#include <cmath>
+#include <ctime>
+#include <queue>
+#include <set>
+#include <map>
+
 #include <unistd.h>
-
-void Camera::c_init() {
-    c_dw = (c_direction * c_up).normal() * tan(c_field_angle / 2) * (1. * c_w / c_h);
-    c_dh = (c_direction * c_dw).normal() * tan(c_field_angle / 2);
-    c_color = new Color*[c_w];
-    for (int i = 0; i < c_w; i++) c_color[i] = new Color[c_h];
-}
-
-Camera::Camera(const Vector3 &eye, const Vector3 &look_at, const Vector3 &up, int w, int h,
-               double field_angle, double aperture, double focal_length) {
-    c_eye = eye, c_look_at = look_at, c_direction = (look_at - eye).normal(),
-    c_up = up, c_w = w, c_h = h,
-    c_field_angle = field_angle * Const::pi / 180,
-    c_aperture = aperture, c_focal_length = (look_at - eye).length();
-    if (focal_length > Const::eps) c_focal_length = focal_length;
-    c_init();
-}
 
 Camera::Camera(std::ifstream &fin) {
     int n;
@@ -50,6 +44,23 @@ Camera::Camera(std::ifstream &fin) {
         else std::cerr << "Camera error!" << std::endl;
     }
     *this = Camera(c_eye, c_look_at, c_up, c_w, c_h, c_field_angle, c_aperture, c_focal_length);
+}
+
+void Camera::c_init() {
+    c_dw = (c_direction * c_up).normal() * tan(c_field_angle / 2) * (1. * c_w / c_h);
+    c_dh = (c_direction * c_dw).normal() * tan(c_field_angle / 2);
+    c_color = new Color*[c_w];
+    for (int i = 0; i < c_w; i++) c_color[i] = new Color[c_h];
+}
+
+Camera::Camera(const Vector3 &eye, const Vector3 &look_at, const Vector3 &up, int w, int h,
+               double field_angle, double aperture, double focal_length) {
+    c_eye = eye, c_look_at = look_at, c_direction = (look_at - eye).normal(),
+    c_up = up, c_w = w, c_h = h,
+    c_field_angle = field_angle * Const::pi / 180,
+    c_aperture = aperture, c_focal_length = (look_at - eye).length();
+    if (focal_length > Const::eps) c_focal_length = focal_length;
+    c_init();
 }
 
 bool Camera::bool_depth_of_field() {

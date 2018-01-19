@@ -1,8 +1,18 @@
 #ifndef Const_h
 #define Const_h
 
-#include <cmath>
+#include <algorithm>
+#include <iostream>
+#include <cstring>
 #include <cstdlib>
+#include <cstdio>
+#include <vector>
+#include <bitset>
+#include <cmath>
+#include <ctime>
+#include <queue>
+#include <set>
+#include <map>
 
 typedef unsigned long long uint64;
 typedef unsigned int uint32;
