@@ -58,7 +58,7 @@ void Polynomial6::p6_init() {
     }
     
     for (int i = 2; i < 7; i++) {
-        long double a = p6_aa[i - 2][8 - i] / p6_aa[i - 1][7 - i];
+        long= double a = p6_aa[i - 2][8 - i] / p6_aa[i - 1][7 - i];
         long double b = (p6_aa[i - 2][7 - i] - a * p6_aa[i - 1][6 - i]) / p6_aa[i - 1][7 - i];
         
         for (int j = 0; j < 7 - i; j++)
