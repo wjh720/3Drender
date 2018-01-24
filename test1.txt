@@ -141,7 +141,7 @@ objects
             m_diffuse   0.8
             m_spec  0.2
             m_refl 0.0
-            m_texture   ../qiqi.bmp
+            m_texture   ../uuu.bmp
 
     -------------------------
     rotation_body_1
