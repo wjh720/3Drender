@@ -30,11 +30,11 @@ lights
         rect_dx 0.3 0. 0.
         rect_dy 0. 0.3 0.
         rect_center 1.9 1. 5.
-        l_power 50.
+        l_power 100.
 
 --------------------------------
 objects
-9
+10
 
     -------------------------
     floor
@@ -232,3 +232,30 @@ objects
             m_diffuse   0.7
             m_spec  0.3
             m_texture ../marble.bmp
+
+    -------------------------
+    rotation_body_2
+
+    type
+    Rotation_body
+
+        3
+        rb_center   0. 0. 1.8
+        o_material
+
+            7
+            m_diffuse   0.
+            m_spec  0.0
+            m_refl 1.
+            m_refr 0.
+            m_refractivity 1.5
+		    m_absorb_color  0.0 0.0 0.0
+		    m_color 1. 1. 1.
+        rb_curves
+
+            1
+            -------
+            0. 0.
+            0.0905 0.009
+            0.2275 0.0422
+            0.407 0.03
