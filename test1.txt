@@ -246,8 +246,8 @@ objects
             7
             m_diffuse   0.
             m_spec  0.0
-            m_refl 1.
-            m_refr 0.
+            m_refl 0.
+            m_refr 1.
             m_refractivity 1.5
 		    m_absorb_color  0.0 0.0 0.0
 		    m_color 1. 1. 1.
