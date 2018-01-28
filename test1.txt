@@ -30,7 +30,7 @@ lights
         rect_dx 0.3 0. 0.
         rect_dy 0. 0.3 0.
         rect_center 1.9 1. 5.
-        l_power 100.
+        l_power 300.
 
 --------------------------------
 objects
@@ -246,11 +246,11 @@ objects
             7
             m_diffuse   0.
             m_spec  0.0
-            m_refl 0.
-            m_refr 1.
-            m_refractivity 1.5
+            m_refl 0.5
+            m_refr 0.5
+            m_refractivity 1.1
 		    m_absorb_color  0.0 0.0 0.0
-		    m_color 1. 1. 1.
+		    m_color 0.8 0.8 0.8
         rb_curves
 
             1

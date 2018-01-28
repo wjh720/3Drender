@@ -1,5 +1,5 @@
 ppm_initial_search_radius
-1.
+0.1
 
 anti_aliasing_edge_threshold
 0.01
@@ -47,7 +47,7 @@ ppm_initial_search_radius
 0.05
 
 ppm_iteration_depth
-1000
+10000
 
 ppm_photon_emitted_number
 100000
