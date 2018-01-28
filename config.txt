@@ -11,7 +11,7 @@ anti_aliasing_samples
 8
 
 depth_of_field_samples
-0
+4
 
 enable_fresnel
 1

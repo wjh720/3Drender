@@ -5,9 +5,9 @@ ambient_color   0.3 0.3 0.3
 camera
 
     8
-    c_aperture  0.
-    c_eye   0.5 -3.5 2.5
-    c_focal_length  0.
+    c_aperture  0.05
+    c_eye   0.45 -3.5 2.4
+    c_focal_length  5.
     c_field_angle   40.
     c_h 600
     c_look_at   0.3 -2.5 2.
@@ -48,7 +48,7 @@ lights
 
 --------------------------------
 objects
-10
+9
 
     -------------------------
     floor
@@ -246,30 +246,3 @@ objects
             m_diffuse   0.7
             m_spec  0.3
             m_texture ../marble.bmp
-
-    -------------------------
-    rotation_body_2
-
-    type
-    Rotation_body
-
-        3
-        rb_center   0. 0. 1.8
-        o_material
-
-            7
-            m_diffuse   0.
-            m_spec  0.0
-            m_refl 0.5
-            m_refr 0.5
-            m_refractivity 1.1
-		    m_absorb_color  0.0 0.0 0.0
-		    m_color 0.8 0.8 0.8
-        rb_curves
-
-            1
-            -------
-            0. 0.
-            0.0905 0.009
-            0.2275 0.0422
-            0.407 0.03

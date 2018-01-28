@@ -135,31 +135,6 @@ Collision Rotation_body::collide_ray(const Ray &ray) const {
         if (!coll.is_intersecting() || (!coll.co_is_internal && coll.co_distance > res.x - Const::eps))
             continue;
         
-        /*
-        Vector3 r_c = ray.ray_start;
-        Vector3 center_dir = r_c - rb_center;
-        Vector2 dir2 = dir.to_Vector2(), center_dir2 = center_dir.to_Vector2();
-        Vector2 q0, q1, q2, q3;
-        
-        // A.y^2 + B.y + C + D.x^2 = 0
-        long double A = dir2.length2();
-        long double B = 2 * dir2.dot(center_dir2) * dir.z - 2 * center_dir.z * A;
-        long double C = Vector2(center_dir.z * dir.x - center_dir.x * dir.z,
-                                center_dir.z * dir.y - center_dir.y * dir.z).length2();
-        long double D = -dir.z * dir.z, a[7];
-        
-        rb_curves[i].get_para(q0, q1, q2, q3);
-        a[0] = A * q0.y * q0.y + D * q0.x * q0.x + C + B * q0.y;
-        a[1] = 2 * A * q0.y * q1.y + 2 * D * q0.x * q1.x + B * q1.y;
-        a[2] = A * (q1.y * q1.y + 2 * q0.y * q2.y) + D * (q1.x * q1.x + 2 * q0.x * q2.x) + B * q2.y;
-        a[3] = 2 * A * (q0.y * q3.y + q1.y * q2.y) + 2 * D * (q0.x * q3.x + q1.x * q2.x) + B * q3.y;
-        a[4] = A * (2 * q1.y * q3.y + q2.y * q2.y) + D * (2 * q1.x * q3.x + q2.x * q2.x);
-        a[5] = 2 * (A * q2.y * q3.y + D * q2.x * q3.x);
-        a[6] = A * q3.y * q3.y + D * q3.x * q3.x;
-        Polynomial6 poly(a);
-         */
-        
-        
         long double a[7];
         Vector3 r_c = ray.ray_start;
         Vector3 center_dir = rb_center - r_c;
@@ -182,7 +157,6 @@ Collision Rotation_body::collide_ray(const Ray &ray) const {
         
         std::vector<double> roots = poly.return_all_roots(0, 1);
         
-        //center_dir = -center_dir;
         for (auto u : roots) {
             double t = -1;
             Vector2 p = rb_curves[i].get_p(u);
