@@ -37,6 +37,7 @@ void PhotonTracer::emit_photons(int number_photons) {
     for (int i = 0; i < num_threads; i++) {
         double del_power = sum_power / (1. * number_photons / num_threads);
         threads.push_back(std::thread([this, sum_power, del_power, &sum, &lock]() {
+            srand(Const::Rand_uint());
             for (auto l = pt_scene -> lights_begin(); l != pt_scene -> lights_end(); l++) {
                 double light_power = (*l) -> get_power();
                 for (;light_power > 0; light_power -= del_power) {
