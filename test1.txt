@@ -16,7 +16,7 @@ camera
 
 --------------------------------
 lights
-1
+2
 
     -------------------------
     light_1
@@ -30,7 +30,21 @@ lights
         rect_dx 0.3 0. 0.
         rect_dy 0. 0.3 0.
         rect_center 1.9 1. 5.
-        l_power 300.
+        l_power 100.
+
+    -------------------------
+    light_2
+
+    type
+    Rectlight
+
+        6
+        l_color 0.95 0.8 0.65
+        rect_normal 0. 0. -1.
+        rect_dx 0.3 0. 0.
+        rect_dy 0. 0.3 0.
+        rect_center -1.9 1. 5.
+        l_power 100.
 
 --------------------------------
 objects
